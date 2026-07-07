@@ -1,0 +1,162 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:Segoe UI,sans-serif;
+}
+
+body{
+    background:#f4f6f9;
+}
+
+.navbar{
+    background:#111;
+    color:white;
+    padding:20px 40px;
+
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+.logo{
+    font-size:28px;
+    font-weight:bold;
+}
+.logo {
+  width: 40px;
+  height: 40px;
+}
+
+.logo-section{
+    display:flex;
+    align-items:center;
+    gap:12px;
+}
+
+.logo-img{
+    width:60px;
+    height:60px;
+    object-fit:contain;
+}
+
+.logo-text{
+    font-size:32px;
+    font-weight:bold;
+}
+.nav-right{
+    display:flex;
+    gap:25px;
+    font-size:24px;
+    cursor:pointer;
+}
+
+.page-title{
+    text-align:center;
+    margin:30px 0;
+}
+
+#wishlistContainer{
+    width:90%;
+    margin:auto;
+}
+
+.wishlist-card{
+
+    background:white;
+
+    display:flex;
+    gap:20px;
+
+    padding:20px;
+    margin-bottom:20px;
+
+    border-radius:15px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.1);
+}
+
+.wishlist-card img{
+    width:140px;
+    border-radius:10px;
+}
+
+.book-details{
+    flex:1;
+}
+
+.book-details h2{
+    margin-bottom:10px;
+}
+
+.book-details p{
+    margin-bottom:8px;
+}
+
+.button-group{
+    margin-top:15px;
+    display:flex;
+    gap:10px;
+    flex-wrap:wrap;
+}
+
+.button-group button{
+
+    border:none;
+    padding:10px 18px;
+
+    border-radius:8px;
+    cursor:pointer;
+
+    background:#111;
+    color:white;
+}
+.back-btn{
+    background:white;
+    color:black;
+    border:none;
+    padding:8px 15px;
+    border-radius:8px;
+    cursor:pointer;
+    font-weight:bold;
+}
+
+.back-btn:hover{
+    transform:translateY(-2px);
+}
+.profile-wrapper{
+    position:relative;
+}
+
+.profile-icon{
+    cursor:pointer;
+    font-size:28px;
+}
+
+.profile-menu{
+    display:none;
+
+    position:absolute;
+    top:40px;
+    right:0;
+
+    width:170px;
+
+    background:white;
+    color:black;
+    border-radius:10px;
+
+    box-shadow:0 5px 15px rgba(0,0,0,0.2);
+
+    overflow:hidden;
+
+}
+
+.profile-menu p{
+    padding:12px;
+    cursor:pointer;
+}
+
+.profile-menu p:hover{
+    background:#f2f2f2;
+}

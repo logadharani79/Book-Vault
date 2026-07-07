@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Checkout</title>
+  <link rel="stylesheet" href="buy.css">
+</head>
+
+<body>
+<header class="navbar">
+
+    <div class="logo-section">
+        <img src="BV.png" class="logo-img" alt="Book Vault Logo">
+        <div class="logo-text">Book Vault</div>
+    </div>
+
+    <div class="nav-right">
+
+        <button class="back-btn"
+                onclick="window.location.href='home.html'">
+            ← Back
+        </button>
+
+        <span onclick="window.location.href='wishlist.html'">
+            ❤️
+        </span>
+
+        <span onclick="window.location.href='cart.html'">
+            🛒
+        </span>
+
+        <div class="profile-wrapper">
+
+            <span class="profile-icon"
+                  onclick="toggleProfileMenu()">
+                👤
+            </span>
+
+            <div id="profileMenu" class="profile-menu">
+
+                <p onclick="goAccount()">
+                    Your Account
+                </p>
+
+                <p onclick="goOrders()">
+                    Your Orders
+                </p>
+
+                <p onclick="window.location.href='wishlist.html'">
+                    Your Wishlist
+                </p>
+
+                <p onclick="window.location.href='cart.html'">
+                    Your Cart
+                </p>
+
+                <p onclick="logout()">
+                    Logout
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+<div class="container">
+  <h2>⚡ Buy Now</h2>
+
+  <div id="product"></div>
+
+  <h3>Delivery Address</h3>
+  <textarea id="address"></textarea>
+
+  <h3>Payment Method</h3>
+  <label><input type="radio" name="pay" value="UPI"> UPI</label><br>
+  <label><input type="radio" name="pay" value="Card"> Card</label><br>
+  <label><input type="radio" name="pay" value="COD"> Cash on Delivery</label>
+
+  <button onclick="payNow()">Pay Amount</button>
+</div>
+
+<script src="buy.js"></script>
+</body>
+</html>

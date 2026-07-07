@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>My Orders</title>
+  <link rel="stylesheet" href="orders.css">
+</head>
+
+<body>
+
+<!-- ✅ NAVBAR START -->
+<header class="navbar">
+
+  <div class="logo-section">
+    <img src="BV.png" class="logo-img" alt="Book Vault Logo">
+    <div class="logo-text">Book Vault</div>
+  </div>
+
+  <div class="nav-right">
+
+    <button class="back-btn" onclick="history.back()">
+      ← Back
+    </button>
+
+    <span class="icon" onclick="window.location.href='wishlist.html'">❤️</span>
+
+    <span class="icon" onclick="window.location.href='cart.html'">🛒</span>
+
+    <div class="profile-wrapper">
+
+      <span class="profile-icon icon" onclick="toggleProfileMenu()">
+        👤
+      </span>
+
+      <div id="profileMenu" class="profile-menu">
+
+        <p onclick="goAccount()">Your Account</p>
+        <p onclick="goOrders()">Your Orders</p>
+        <p onclick="window.location.href='wishlist.html'">Your Wishlist</p>
+        <p onclick="window.location.href='cart.html'">Your Cart</p>
+        <p onclick="logout()">Logout</p>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</header>
+<!-- ✅ NAVBAR END -->
+
+
+<!-- YOUR EXISTING CONTENT -->
+<div class="container">
+  <h2>📦 My Orders</h2>
+  <div id="orders"></div>
+</div>
+
+<script src="orders.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,4037 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Book Vault - Home</title>
+    <link rel="stylesheet" href="home.css">
+</head>
+
+<body>
+
+
+<script>
+    if (localStorage.getItem("loggedIn") !== "true") {
+        window.location.href = "login.html";
+    }
+</script>
+
+<!-- rest of your home page -->
+<header  class="navbar">
+
+    <!-- LEFT -->
+    <div class="left-section">
+        <img src="BV.png" class="home-logo">
+
+        <div class="logo">
+            Book Vault
+        </div>
+<div class="welcome-user" id="welcomeUser"></div>
+        <div class="quote" id="quoteText">
+            Your Next Adventure Starts Here!!!!
+        </div>
+    </div>
+
+    <!-- CENTER -->
+    <div class="search-section">
+        <div class="divider"></div>
+
+        <div class="search-bar">
+            <input type="text"
+            id="searchInput"
+             placeholder="Search books,authors,genres...">
+            <button type=" button">🔍</button>
+        </div>
+
+        <div class="divider"></div>
+    </div>
+
+    <!-- RIGHT -->
+    <div class="nav-icons">
+
+        <span onclick="openWishlist()">
+            ❤️ Wishlist
+        </span>
+
+        <span onclick="openCart()">
+            🛒 Cart
+        </span>
+
+        <div class="profile-wrapper">
+
+            <span class="profile-icon"
+                  onclick="toggleProfileMenu()">
+                👤 Profile
+            </span>
+
+            <div class="profile-menu" id="profileMenu">
+
+    <p onclick="goAccount()">
+        Your Account
+    </p>
+
+    <p onclick="goOrders()">
+        Your Orders
+    </p>
+
+    <p onclick="goWishlist()">
+        Your Wishlist
+    </p>
+
+    <p onclick="goCart()">
+        Your Cart
+    </p>
+
+    <p onclick="logout()">
+        Logout
+    </p>
+
+</div>
+
+        </div>
+
+    </div>
+
+</div>
+
+</header>
+
+<!-- SEARCH RESULTS SECTION -->
+<section id="searchResultsSection" style="display:none;">
+
+    <h2 id="searchResultsTitle">
+        Search Books, Author....
+    </h2>
+
+    <div class="row-wrapper">
+
+        <button class="arrow search-left">❮</button>
+
+        <div id="searchResultsRow" class="row">
+        </div>
+
+        <button class="arrow search-right">❯</button>
+
+    </div>
+
+</section>
+
+<div class="background">
+
+<section class="categories">
+
+    <!-- NEWLY RELEASED -->
+    <h2>Newly Released</h2>
+
+<div class="row-wrapper">
+    <button class="arrow left">❮</button>
+    <div class="row">
+
+
+
+<div class="book-box"
+     data-title="Sunrise on the Reaping"
+     data-author="Suzanne Collins"
+     data-genre="Fantasy Magic Adventure"
+     onclick="openBook(
+        'Sunrise on the Reaping',
+        'https://m.media-amazon.com/images/I/61o5Q8IIq4L._AC_UF1000,1000_QL80_.jpg',
+        'Suzanne Collins',
+        ' 4.4 / 5',
+        'An agoraphobic woman believes she has witnessed a crime in a neighboring house, but no one believes her.',
+        '799'
+     )">
+
+    <img src="https://m.media-amazon.com/images/I/61o5Q8IIq4L._AC_UF1000,1000_QL80_.jpg"
+         alt="Sunrise on the Reaping">
+
+    <div class="book-info">
+
+        <h3>Sunrise on the Reaping</h3>
+
+        <p>Dystopian • Survival • Adventure </p>
+
+    </div>
+
+</div>
+<div class="book-box"
+     data-title="The River Has Roots"
+     data-author="Amal El-Mohtar"
+     data-genre="Fantasy Magic Romance"
+     onclick="openBook(
+        'The River Has Roots',
+        'https://m.media-amazon.com/images/I/81fSkHH1wlL._UF1000,1000_QL80_.jpg',
+         'Amal El-Mohtar',
+            '4.6 / 5',
+            'A story of love and loss in a world where the dead walk among the living.',
+            '899'
+     )">
+
+    <img src="https://m.media-amazon.com/images/I/81fSkHH1wlL._UF1000,1000_QL80_.jpg"
+         alt="The River Has Roots">
+
+    <div class="book-info">
+
+        <h3>
+            The River Has Roots
+        </h3>
+
+        <p>
+            Dystopian • Survival • Adventure
+        </p>
+
+    </div>
+
+</div>
+<div class="book-box"
+     data-title="The Devils"
+     data-author="Joe Abercrombie"
+     data-genre="Fantasy Magic Adventure"
+     onclick="openBook(
+        'The Devils',
+        'https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRj_6rMpK2_7W3iaCvR0jvTAsoLld74hrcwHWfu_-9gU7O7a2Ps2oFSyK-OmtbtXWHNcB6bemGAvpopP2JDGUePRP2qwqE',
+        'Joe Abercrombie',
+'4.3 / 5',
+'A dark fantasy adventure following a dangerous band of outcasts forced to serve a holy cause in a brutal world.',
+'799'
+     )">
+
+    <img src="https://encrypted-tbn0.gstatic.com/shopping?q=tbn:ANd9GcRj_6rMpK2_7W3iaCvR0jvTAsoLld74hrcwHWfu_-9gU7O7a2Ps2oFSyK-OmtbtXWHNcB6bemGAvpopP2JDGUePRP2qwqE"
+         alt="The Devils">
+    <div class="book-info">
+
+        <h3>
+            The Devils
+        </h3>
+
+        <p>
+            Historical • Drama • Romance
+        </p>
+
+    </div>
+
+</div>
+
+<div class="book-box"
+     data-title="Atmosphere"
+     data-author="Taylor Jenkins Reid"
+     data-genre="Fantasy Magic Adventure"
+     onclick="openBook(
+        'Atmosphere',
+        'https://prh.imgix.net/extra-media/9781529152982_3__1200x1200.jpg',
+        'Taylor Jenkins Reid',
+'4.5 / 5',
+'A moving story of ambition, love, and sacrifice set against the backdrop of the space race.',
+'899'
+     )">
+    <img src="https://prh.imgix.net/extra-media/9781529152982_3__1200x1200.jpg"
+         alt="Atmosphere">
+    <div class="book-info">
+<h3>Atmosphere</h3>
+             <p>Historical • Drama • Romance</p>
+    </div>
+
+</div>
+
+<div class="book-box"
+     data-title="Bury Our Bones in the Midnight Soil"
+     data-author="V.E.Schwab"
+     data-genre="Fantasy Gothic Mystery"
+     onclick="openBook(
+        'Bury Our Bones in the Midnight Soil',
+        'https://www.wordsworth.co.za/cdn/shop/files/429920_67a09e9327e492.42472284_9781035064656_310x472.jpg?v=1738581412',
+    'V.E. Schwab',
+'4.6 / 5',
+'A dark fantasy exploring immortality, desire, and the consequences of living forever.<br>Three women across centuries become bound by a haunting supernatural fate.',
+'999'
+     )">
+
+    <img src="https://www.wordsworth.co.za/cdn/shop/files/429920_67a09e9327e492.42472284_9781035064656_310x472.jpg?v=1738581412"
+         alt="Bury Our Bones in the Midnight Soil">
+
+    <div class="book-info">
+
+        <h3>
+            Bury Our Bones in the Midnight Soil
+        </h3>
+
+        <p>
+            Fantasy • Gothic • Mystery
+        </p>
+
+    </div>
+
+</div>
+
+<div class="book-box"
+     data-title="Great Big Beautiful Life"
+     data-author="Emily Henry"
+     data-genre="Fantasy Gothic Mystery"
+     onclick="openBook(
+        'Great Big Beautiful Life',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlNitWsQilwPDIHiYWR8UFszot3qlZLLY3S59XHPBtJ2sI_-ff5SJCGmR4njSqmbW4v3acY7UaCJ_ckvz2QT-T_hIU3e_NLw068FVNKsg&s=10',
+   'Emily Henry',
+'4.4 / 5',
+'Two writers compete to uncover a mysterious woman’s life story while chasing their dreams.<br>Along the way, they discover unexpected romance and hidden truths.',
+'799'
+     )">
+
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlNitWsQilwPDIHiYWR8UFszot3qlZLLY3S59XHPBtJ2sI_-ff5SJCGmR4njSqmbW4v3acY7UaCJ_ckvz2QT-T_hIU3e_NLw068FVNKsg&s=10"
+         alt="Great Big Beautiful Life">
+
+    <div class="book-info">
+
+        <h3>
+            Great Big Beautiful Life
+        </h3>
+
+        <p>
+            Romance • Contemporary • Drama
+        </p>
+
+    </div>
+
+</div>
+
+
+<div class="book-box"
+     data-title="Wild Dark Shore"
+     data-author="Charlotte McConaghy"
+     data-genre="Thriller Mystery Adventure"
+     onclick="openBook(
+        'Wild Dark Shore',
+        'https://m.media-amazon.com/images/I/81lXSf+fNXL._AC_UF1000,1000_QL80_.jpg',
+      'Charlotte McConaghy',
+'4.5 / 5',
+'A gripping tale of survival, family secrets, and the power of nature.<br>A remote island becomes the setting for life-changing discoveries.',
+'899'
+     )">
+
+    <img src="https://m.media-amazon.com/images/I/81lXSf+fNXL._AC_UF1000,1000_QL80_.jpg"
+         alt="Wild Dark Shore">
+
+    <div class="book-info">
+
+        <h3>
+            Wild Dark Shore
+        </h3>
+
+        <p>
+            Thriller • Mystery • Adventure
+        </p>
+
+    </div>
+
+</div>
+
+<div class="book-box"
+     data-title="The Emperor of Gladness"
+     data-author="Ocean Vuong"
+     data-genre="Literary Drama  Contemporary"
+     onclick="openBook(
+        'The Emperor of Gladness',
+        'https://m.media-amazon.com/images/I/81j636gc4QL._UF1000,1000_QL80_.jpg',
+        'Ocean Vuong',
+        '4.4 / 5',
+        'A suicidal young man is saved by a widow with dementia, finding a new, chosen family through their caretaking relationship. This unlikely connection provides both of them with a second chance at survival and healing.',
+        '849'
+     )">
+
+    <img src="https://m.media-amazon.com/images/I/81j636gc4QL._UF1000,1000_QL80_.jpg"
+         alt="The Emperor of Gladness">
+
+    <div class="book-info">
+
+        <h3>
+            The Emperor of Gladness
+        </h3>
+
+        <p>
+            Literary • Drama • Contemporary
+        </p>
+
+    </div>
+
+</div>
+
+<div class="book-box"
+     data-title="The Knight and the Moth"
+     data-author="Rachel Gilig"
+     data-genre="Fantasy Romance Adventure"
+     onclick="openBook(
+        'The Knight and the Moth',
+        'https://m.media-amazon.com/images/I/91o+PBMeilL._UF1000,1000_QL80_.jpg',
+        'Rachel Gillig',
+'4.6 / 5',
+'A gothic fantasy where prophecy, forbidden love, and dark magic collide. A knight and a seer must uncover dangerous secrets that could change their world forever.',
+'999'
+     )">
+
+    <img src="https://m.media-amazon.com/images/I/91o+PBMeilL._UF1000,1000_QL80_.jpg"
+         alt="The Knight and the Moth">
+
+    <div class="book-info">
+
+        <h3>
+            The Knight and the Moth
+        </h3>
+
+        <p>
+            Fantasy • Romance • Adventure
+        </p>
+
+    </div>
+
+</div>
+
+<div class="book-box"
+     data-title="The Buffalo Hunter Hunter"
+     data-author="Stephen Graham Jones"
+     data-genre="Horror Thriller Mystery"
+     onclick="openBook(
+        'The Buffalo Hunter Hunter',
+        'https://m.media-amazon.com/images/I/81+otancnCL._AC_UF1000,1000_QL80_.jpg',
+        'Horror • Thriller • Mystery'
+     )">
+
+    <img src="https://m.media-amazon.com/images/I/81+otancnCL._AC_UF1000,1000_QL80_.jpg"
+         alt="The Buffalo Hunter Hunter">
+    <div class="book-info">
+        <h3> The Buffalo Hunter Hunter </h3>
+
+        <p>Horror • Thriller • Mystery</p>
+    </div>
+</div>
+
+<div class="book-box"
+     data-title="The Sirens"
+     data-author="Emilia Hart"
+     data-genre="Fantasy Historical Mystery"
+     onclick="openBook(
+        'The Sirens',
+        'https://m.media-amazon.com/images/I/81493sjudEL._AC_UF1000,1000_QL80_.jpg',
+        'Emilia Hart',
+'4.5 / 5',
+'A magical tale connecting generations of women through mystery and the sea.<br>Ancient powers awaken as long-hidden family secrets come to light.',
+'899'
+     )">
+
+    <img src="https://m.media-amazon.com/images/I/81493sjudEL._AC_UF1000,1000_QL80_.jpg"
+         alt="The Sirens">
+
+    <div class="book-info">
+
+        <h3>
+            The Sirens
+        </h3>
+
+        <p>
+            Fantasy • Historical • Mystery
+        </p>
+
+    </div>
+
+</div>
+
+<div class="book-box"
+     data-title="The Memory Hunters"
+     data-author="Emilia Henry"
+     data-genre="Fantasy Magic Adventure"
+     onclick="openBook(
+        'The Memory Hunters',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9ga2mr0cKOQYY0U2lrzgorcuR2gkgl3oa_C8FLEmp63actIPsgLqHYT4&s=10',
+        'Emilia Henry',
+'4.4 / 5',
+'Adventurers risk everything to uncover forgotten memories hidden across worlds.<br>Their journey reveals truths that could reshape reality itself.',
+'849'
+     )">
+
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT9ga2mr0cKOQYY0U2lrzgorcuR2gkgl3oa_C8FLEmp63actIPsgLqHYT4&s=10"
+         alt="The Memory Hunters">
+
+    <div class="book-info">
+
+        <h3>
+            The Memory Hunters
+        </h3>
+
+        <p>
+            Fantasy • Magic • Adventure
+        </p>
+
+    </div>
+
+</div>
+<div class="book-box"
+     data-title="A Curse Carved in Bone"
+     data-author="Danielle L.Jensen"
+     data-genre="Fantasy Romance Action"
+     onclick="openBook(
+        'A Curse Carved in Bone',
+        'https://m.media-amazon.com/images/I/81KNP8GdwNL._UF1000,1000_QL80_.jpg',
+        'Danielle L. Jensen',
+'4.6 / 5',
+'A thrilling fantasy romance filled with ancient magic, betrayal, and destiny.<br>A young warrior must uncover dangerous truths while fighting for her future and her heart.',
+'999'
+     )">
+
+    <img src="https://m.media-amazon.com/images/I/81KNP8GdwNL._UF1000,1000_QL80_.jpg"
+         alt="A Cursed Carved in Bone">
+
+    <div class="book-info">
+
+        <h3>
+            A Curse Carved in Bone
+        </h3>
+
+        <p>
+            Fantasy • Romance • Action
+        </p>
+
+    </div>
+
+</div>
+<div class="book-box"
+     data-title="Deep End"
+     data-author="Ali Hazelwood"
+     data-genre="Romance • Contemporary • Sports"
+     onclick="openBook(
+        'Deep End',
+        'https://m.media-amazon.com/images/I/81KQ0-xGDvL._UF1000,1000_QL80_.jpg',
+       'Ali Hazelwood',
+'4.5 / 5',
+'A passionate sports romance filled with ambition, rivalry, and attraction.<br>Two athletes discover that love can be just as intense as competition.',
+'799'
+     )">
+
+    <img src="https://m.media-amazon.com/images/I/81KQ0-xGDvL._UF1000,1000_QL80_.jpg"
+         alt="Deep End">
+
+    <div class="book-info">
+
+        <h3>
+            Deep End
+        </h3>
+
+        <p>
+            Romance • Contemporary • Sports
+        </p>
+
+    </div>
+
+</div>
+<div class="book-box"
+     data-title="The Stolen Heir"
+     data-author="Holly Black"
+     data-genre="Fantasy Magic Adventure"
+     onclick="openBook(
+        'The Stolen Heir',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPojMsSOxDMo4RhoQyKL-Wxy725FXHcD7CI9PzFmFGy14KK-XwSS59laOE&s=10',
+        'Holly Black',
+'4.6 / 5',
+'A dangerous journey through the treacherous realm of Faerie begins.<br>Secrets, betrayal, and forbidden alliances threaten the fate of kingdoms.',
+'899'
+     )">
+
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQPojMsSOxDMo4RhoQyKL-Wxy725FXHcD7CI9PzFmFGy14KK-XwSS59laOE&s=10"
+         alt="The Stolen Heir">
+
+    <div class="book-info">
+
+        <h3>
+            The Stolen Heir
+        </h3>
+
+        <p>
+            Fantasy • Magic • Adventure
+        </p>
+
+    </div>
+
+</div>
+<div class="book-box"
+     data-title="The Last Dreamwalker"
+     data-author="Rita Woods"
+     data-genre="Fantasy Historical Mystery"
+     onclick="openBook(
+        'The Last Dreamwalker',
+        'https://m.media-amazon.com/images/I/81uM8NFQ7LL._AC_UF1000,1000_QL80_.jpg',
+        'Rita Woods',
+'4.5 / 5',
+'In a world where dreams can shape reality, a young dreamwalker must uncover the truth behind a series of mysterious events.<br>Her journey leads her to confront ancient forces and hidden legacies.',
+'849'
+     )">
+
+    <img src="https://m.media-amazon.com/images/I/81uM8NFQ7LL._AC_UF1000,1000_QL80_.jpg"
+         alt="The Last Dreamwalker">
+
+    <div class="book-info">
+
+        <h3>
+            The Last Dreamwalker
+        </h3>
+
+        <p>
+            Fantasy • Historical • Mystery
+        </p>
+
+    </div>
+
+</div>
+<div class="book-box"
+     data-title="House of Blight"
+     data-author="Maxym M. Martineau"
+     data-genre="Fantasy Dark Romance"
+     onclick="openBook(
+        'House of Blight',
+        'https://m.media-amazon.com/images/I/81COYECN-KL._UF1000,1000_QL80_.jpg',
+        'Maxym M. Martineau',
+'4.5 / 5',
+'A dark fantasy romance where cursed magic threatens both love and survival.<br>As danger grows, impossible choices must be made to save those they cherish.',
+'899'
+     )">
+
+    <img src="https://m.media-amazon.com/images/I/81COYECN-KL._UF1000,1000_QL80_.jpg"
+         alt="House of Blight">
+
+    <div class="book-info">
+
+        <h3>
+            House of Blight
+        </h3>
+
+        <p>
+            Fantasy • Dark • Romance
+        </p>
+
+    </div>
+
+</div>
+<div class="book-box"
+     data-title="Fearless"
+     data-author="Lauren Roberts"
+     data-genre="Fantasy •Romance •Adventure"
+     onclick="openBook(
+        'The Frozen Archive',
+        'https://m.media-amazon.com/images/I/81KpJKwJMhL._UF1000,1000_QL80_.jpg',
+        'Lauren Roberts',
+'4.7 / 5',
+'The thrilling conclusion to an epic fantasy romance filled with danger and sacrifice.<br>Powerful enemies, shocking revelations, and destiny collide in the final battle.',
+'999'
+     )">
+
+    <img src="https://m.media-amazon.com/images/I/81KpJKwJMhL._UF1000,1000_QL80_.jpg"
+         alt="The Frozen Archive">
+
+    <div class="book-info">
+
+        <h3>
+            Fearless
+        </h3>
+
+        <p>
+           Fantasy • Romance • Adventure 
+        </p>
+
+    </div>
+
+</div>
+
+<div class="book-box"
+     data-title="Onyx Storm"
+     data-author="Emilia Hart"
+     data-genre="Rebecca Yarros"
+     onclick="openBook(
+        'Onyx Storm',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJRLAZH2V0sxdbTCvEYUvVoxyqEftYnUFh3VzE9CassdJYpiE2oZlSsas&s=10',
+        'Rebecca Yarros',
+'4.8 / 5',
+'A dragon-riding fantasy packed with war, romance, and breathtaking adventure.<br>As dark forces rise, every choice could determine the fate of the realm.',
+'1099'
+     )">
+
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQJRLAZH2V0sxdbTCvEYUvVoxyqEftYnUFh3VzE9CassdJYpiE2oZlSsas&s=10"
+         alt="Onyx Storm">
+
+    <div class="book-info">
+
+        <h3>
+            Onyx Storm
+        </h3>
+
+        <p>
+            Fantasy • Historical • Mystery
+        </p>
+
+    </div>
+
+</div>
+        
+
+      
+    </div>
+
+    <button class="arrow right">❯</button>
+</div>
+</section>
+
+<!-- THRILLER -->
+<h2>Thriller</h2>
+
+<div class="row-wrapper">
+
+    <button class="arrow left">❮</button>
+
+    <div class="row">
+
+        <!-- BOOK 1 -->
+ <div class="book-box"
+   data-title="Gone Girl"
+data-author="Gillian Flynn"
+data-genre="Thriller Crime Mystery"
+     onclick="openBook(
+        'Gone Girl',
+        'https://m.media-amazon.com/images/I/71EgpAMqnuL._UF1000,1000_QL80_.jpg',
+    'Gillian Flynn',
+'4.4 / 5',
+'A woman mysteriously disappears, leaving behind a trail of shocking clues.<br>As the investigation unfolds, nothing is as it first appears.',
+'699'
+     )">
+
+    <img src="https://m.media-amazon.com/images/I/71EgpAMqnuL._UF1000,1000_QL80_.jpg"
+         alt="Gone Girl">
+
+    <div class="book-info">
+
+        <h3>
+            Gone Girl
+        </h3>
+
+        <p>
+            Thriller • Crime • Mystery
+        </p>
+
+    </div>
+
+</div>
+
+        <!-- BOOK 2 -->
+      <div class="book-box"
+   data-title="The Da Vinci Code"
+data-author="Dan Brown"
+data-genre="Thriller Mystery Adventure"
+     onclick="openBook(
+        'The Da Vinci Code',
+        'https://m.media-amazon.com/images/I/815WORuYMML.jpg',
+    'Dan Brown',
+'4.5 / 5',
+'A murder inside the Louvre leads to a dangerous hunt for hidden secrets.<br>Ancient mysteries and powerful enemies stand in the way.',
+'799'
+     )">
+
+    <img src="https://m.media-amazon.com/images/I/815WORuYMML.jpg"
+         alt="The Da Vinci Code">
+
+    <div class="book-info">
+
+        <h3>
+            The Da Vinci Code
+        </h3>
+
+        <p>
+            Thriller • Mystery • Adventure
+        </p>
+
+    </div>
+
+</div>
+
+        <!-- BOOK 3 -->
+       <div class="book-box"
+   data-title="The Girl on the Train"
+data-author="Paula Hawkins"
+data-genre="Thriller Mystery Drama"
+     onclick="openBook(
+        'The Girl on the Train',
+        'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6JUKh1whItyuOMi_u1v3XXXkvMwDxyoC-0Lqpo-zLTMaXW7od4u19cEPkSBgqPG_tBy3K2g&s=10',
+    'Paula Hawkins',
+'4.3 / 5',
+'A troubled commuter becomes entangled in a missing persons investigation.<br>Her fragmented memories may hold the key to the truth.',
+'649'
+     )">
+
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT6JUKh1whItyuOMi_u1v3XXXkvMwDxyoC-0Lqpo-zLTMaXW7od4u19cEPkSBgqPG_tBy3K2g&s=10"
+         alt="The Girl on the Train">
+
+    <div class="book-info">
+
+        <h3>
+            The Girl on the Train
+        </h3>
+
+        <p>
+            Thriller • Mystery • Drama
+        </p>
+
+    </div>
+
+</div>
+
+<div class="book-box"
+   data-title="The Silent Patient"
+data-author="Alex Michaelides"
+data-genre="Thriller Psychological Mystery"
+     onclick="openBook(
+        'The Silent Patient',
+        'https://m.media-amazon.com/images/I/81JJPDNlxSL._AC_UF1000,1000_QL80_.jpg',
+    'Alex Michaelides',
+'4.6 / 5',
+'A famous artist shoots her husband and never speaks another word.<br>A determined therapist becomes obsessed with uncovering why.',
+'799'
+     )">
+
+    <img src="https://m.media-amazon.com/images/I/81JJPDNlxSL._AC_UF1000,1000_QL80_.jpg"
+         alt="The Silent Patient">
+
+    <div class="book-info">
+
+        <h3>
+            The Silent Patient
+        </h3>
+
+        <p>
+            Thriller • Psychological • Mystery
+        </p>
+
+    </div>
+
+</div>
+       <div class="book-box"
+  data-title="The Woman in the Window"
+data-author="A.J. Finn"
+data-genre="Thriller Mystery Psychological"
+     onclick="openBook(
+        'The Woman in the Window',
+'https://m.media-amazon.com/images/I/71ypUKL5NyL._AC_UF1000,1000_QL80_.jpg',
+        'A.J. Finn',
+'4.2 / 5',
+'An isolated woman believes she witnessed a terrible crime next door.<br>But her own troubled past makes everyone doubt her story.',
+'699'
+     )">
+
+    <img src="https://m.media-amazon.com/images/I/71ypUKL5NyL._AC_UF1000,1000_QL80_.jpg"
+         alt="The Woman in the Window">
+
+    <div class="book-info">
+
+        <h3>
+            The Woman in the Window
+        </h3>
+
+        <p>
+            Thriller • Psychological • Mystery
+        </p>
+
+    </div>
+
+</div>
+
+   <div class="book-box"
+  data-title="Sharp Objects"
+data-author="Gillian Flynn"
+data-genre="Thriller Crime Mystery"
+     onclick="openBook(
+        'Sharp Objects',
+        'https://m.media-amazon.com/images/I/71U1CZS3oUL._AC_UF1000,1000_QL80_.jpg',
+        'Gillian Flynn',
+        '4.4 / 5',
+        'A journalist returns to her hometown to investigate a series of murders.<br>Old wounds resurface as dark family secrets emerge.',
+        '749'
+     )">
+    <img src="https://m.media-amazon.com/images/I/71U1CZS3oUL._AC_UF1000,1000_QL80_.jpg"
+         alt="Sharp Objects">
+    <div class="book-info">
+        <h3>Sharp Objects</h3>
+        <p>Thriller • Crime • Mystery</p>
+    </div>
+
+</div>
+
+   <div class="book-box"
+ data-title="Behind Closed Doors"
+data-author="B.A. Paris"
+data-genre="Thriller Psychological Mystery"
+     onclick="openBook(
+        'B.A. Paris',
+        'https://m.media-amazon.com/images/I/81-uOUBKrFL._AC_UF1000,1000_QL80_.jpg',
+'4.4 / 5',
+'A seemingly perfect marriage hides a terrifying reality.<br>Escape appears impossible as the truth slowly unfolds.',
+'699'
+     )">
+    <img src="https://m.media-amazon.com/images/I/81-uOUBKrFL._AC_UF1000,1000_QL80_.jpg"
+         alt="Behind Closed Doors">
+    <div class="book-info">
+        <h3>Behind Closed Doors</h3>
+        <p>Thriller • Psychological • Mystery</p>
+    </div>
+
+</div>
+
+   <div class="book-box"
+  data-title="Verity"
+data-author="Colleen Hoover"
+data-genre="Thriller Psychological Mystery"
+     onclick="openBook(
+        'Verity',
+        'https://m.media-amazon.com/images/I/71CDMQcvKiL._AC_UF1000,1000_QL80_.jpg',
+        'Colleen Hoover',
+        '4.4 / 5',
+        'A journalist returns to her hometown to investigate a series of murders.<br>Old wounds resurface as dark family secrets emerge.',
+        '749'
+     )">
+    <img src="https://m.media-amazon.com/images/I/71CDMQcvKiL._AC_UF1000,1000_QL80_.jpg"
+         alt="Verity">
+    <div class="book-info">
+        <h3>Verity</h3>
+        <p>Thriller • Psychological • Mystery</p>
+    </div>
+
+</div>
+
+   <div class="book-box"
+data-title="The Guest List"
+data-author="Lucy Foley"
+data-genre="Thriller Mystery Crime"
+     onclick="openBook(
+      'Lucy Foley',
+      'https://m.media-amazon.com/images/I/71ybXEaEzwL._AC_UF1000,1000_QL80_.jpg',
+'4.3 / 5',
+'A glamorous wedding on a remote island turns deadly.<br>Everyone has a motive when a guest is found murdered.',
+'749'
+     )">
+    <img src="https://m.media-amazon.com/images/I/71ybXEaEzwL._AC_UF1000,1000_QL80_.jpg"
+         alt="The Guest List">
+    <div class="book-info">
+        <h3>The Guest List</h3>
+        <p>Thriller • Crime • Mystery</p>
+    </div>
+
+</div>
+<div class="book-box"
+     data-title="The Buffalo Hunter Hunter"
+     data-author="Stephen Graham Jones"
+     data-genre="Horror Thriller Mystery"
+     onclick="openBook(
+        'The Buffalo Hunter Hunter',
+        'https://m.media-amazon.com/images/I/81+otancnCL._AC_UF1000,1000_QL80_.jpg',
+        'Horror • Thriller • Mystery'
+     )">
+
+    <img src="https://m.media-amazon.com/images/I/81+otancnCL._AC_UF1000,1000_QL80_.jpg"
+         alt="The Buffalo Hunter Hunter">
+    <div class="book-info">
+        <h3> The Buffalo Hunter Hunter </h3>
+
+        <p>Horror • Thriller • Mystery</p>
+    </div>
+</div>
+  <div class="book-box"
+  data-title="The Housemaid"
+  data-author="Freida McFadden"
+  data-genre="Psychological Thriller Mystery"
+  onclick="openBook(
+    'The Housemaid',
+    'https://m.media-amazon.com/images/I/81KR0YeLtnL.jpg',
+    'Freida McFadden',
+    '4.3 / 5',
+    'A live-in housemaid discovers dark secrets hidden inside a wealthy family’s home.<br>Nothing is as perfect as it seems.',
+    '328'
+  )">
+    <img src="https://m.media-amazon.com/images/I/81KR0YeLtnL.jpg"
+         alt="The Housemaid">
+    <div class="book-info">
+        <h3>The Housemaid</h3>
+        <p>Psychological • Thriller • Mystery</p>
+    </div>
+
+</div>
+<div class="book-box"
+  data-title="The Housemaid’s Secret"
+  data-author="Freida McFadden"
+  data-genre="Psychological Thriller Mystery"
+  onclick="openBook(
+    'The Housemaid’s Secret',
+    'https://m.media-amazon.com/images/I/81UFVaae9oL._AC_UF1000,1000_QL80_.jpg',
+    'Freida McFadden',
+    '4.2 / 5',
+    'She thought her past was behind her—but working for a new family reveals even darker truths.<br>Danger is closer than ever.',
+    '336'
+  )">
+    <img src="https://m.media-amazon.com/images/I/81UFVaae9oL._AC_UF1000,1000_QL80_.jpg"
+         alt="The Housemaid’s Secret">
+    <div class="book-info">
+        <h3>The Housemaid’s Secret</h3>
+        <p>Psychological • Thriller • Mystery</p>
+    </div>
+
+</div>
+  <div class="book-box"
+  data-title="Never Lie"
+  data-author="Freida McFadden"
+  data-genre="Psychological Thriller Mystery"
+  onclick="openBook(
+    'Never Lie',
+    'https://m.media-amazon.com/images/I/61UdOEvyVjL._AC_UF1000,1000_QL80_.jpg',
+    'Freida McFadden',
+    '4.1 / 5',
+    'A newlywed couple finds a mysterious tape in an abandoned house.<br>What they hear changes everything.',
+    '295'
+  )">
+    <img src="https://m.media-amazon.com/images/I/61UdOEvyVjL._AC_UF1000,1000_QL80_.jpg"
+         alt="Never Lie">
+    <div class="book-info">
+        <h3>Never Lie</h3>
+        <p>Psychological • Thriller • Mystery</p>
+    </div>
+
+</div>
+<div class="book-box"
+  data-title="The Coworker"
+  data-author="Freida McFadden"
+  data-genre="Thriller Crime Mystery"
+  onclick="openBook(
+    'The Coworker',
+    'https://m.media-amazon.com/images/I/81O1XOJ-6zL._UF1000,1000_QL80_.jpg',
+    'Freida McFadden',
+    '4.0 / 5',
+    'When a workplace disappearance shocks an office, secrets between coworkers begin to unravel.<br>One of them is lying.',
+    '314'
+  )">
+    <img src="https://m.media-amazon.com/images/I/81O1XOJ-6zL._UF1000,1000_QL80_.jpg"
+         alt="The Coworker">
+    <div class="book-info">
+        <h3>The Coworker</h3>
+        <p>Psychological • Thriller • Mystery</p>
+    </div>
+
+</div>
+ <div class="book-box"
+  data-title="The Only One Left"
+  data-author="Riley Sager"
+  data-genre="Thriller Mystery Horror"
+  onclick="openBook(
+    'The Only One Left',
+    'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1668181003l/62703226.jpg',
+    'Riley Sager',
+    '4.3 / 5',
+    'A caregiver assigned to a silent woman in a haunted house uncovers a chilling murder story from the past.',
+    '400'
+  )">
+    <img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1668181003l/62703226.jpg"
+         alt="The Only One Left">
+    <div class="book-info">
+        <h3>The Only One Left</h3>
+        <p>Thriller • Mystery • Horror</p>
+    </div>
+
+</div>
+<div class="book-box"
+  data-title="None of This Is True"
+  data-author="Lisa Jewell"
+  data-genre="Psychological Thriller Mystery"
+  onclick="openBook(
+    'None of This Is True',
+    'https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1686092508i/62334530.jpg',
+    'Lisa Jewell',
+    '4.2 / 5',
+    'A podcaster meets a woman who claims to have a dark, hidden double life.<br>But who is telling the truth?',
+    '390'
+  )">
+    <img src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1686092508i/62334530.jpg"
+         alt="None of This Is True">
+    <div class="book-info">
+        <h3>None of This Is True</h3>
+        <p>Psychological • Thriller • Mystery</p>
+    </div>
+
+</div>
+  <div class="book-box"
+  data-title="The Paris Apartment"
+  data-author="Lucy Foley"
+  data-genre="Thriller Mystery Crime"
+  onclick="openBook(
+    'The Paris Apartment',
+    'https://m.media-amazon.com/images/I/61q+ux9telL._AC_UF1000,1000_QL80_.jpg',
+    'Lucy Foley',
+    '4.1 / 5',
+    'A woman arrives in Paris to stay with her brother—but he is missing.<br>Every resident becomes a suspect.',
+    '360'
+  )">
+    <img src="https://m.media-amazon.com/images/I/61q+ux9telL._AC_UF1000,1000_QL80_.jpg"
+         alt="The Paris Apartment">
+    <div class="book-info">
+        <h3>The Paris Apartment</h3>
+        <p>Thriller • Mystery • Crime</p>
+    </div>
+
+</div>
+<div class="book-box"
+  data-title="The Fury"
+  data-author="Alex Michaelides"
+  data-genre="Psychological Thriller Mystery"
+  onclick="openBook(
+    'The Fury',
+    'https://m.media-amazon.com/images/I/91jf0gf7edL._AC_UF1000,1000_QL80_.jpg',
+    'Alex Michaelides',
+    '4.3 / 5',
+    'A secluded island getaway turns deadly as long-buried secrets explode into violence and betrayal.',
+    '320'
+  )">
+    <img src="https://m.media-amazon.com/images/I/91jf0gf7edL._AC_UF1000,1000_QL80_.jpg"
+         alt="The Fury">
+    <div class="book-info">
+        <h3>The Fury</h3>
+        <p>Psychological • Thriller • Mystery</p>
+    </div>
+
+</div>
+<div class="book-box"
+  data-title="Bright Young Women"
+  data-author="Jessica Knoll"
+  data-genre="Crime Thriller Mystery"
+  onclick="openBook(
+    'Bright Young Women',
+    'https://m.media-amazon.com/images/I/71LWLj+Bu+L._AC_UF1000,1000_QL80_.jpg',
+    'Jessica Knoll',
+    '4.2 / 5',
+    'Two women connected by a serial killer case uncover truths that challenge everything they believed about justice.',
+    '370'
+  )">
+    <img src="https://m.media-amazon.com/images/I/71LWLj+Bu+L._AC_UF1000,1000_QL80_.jpg"
+         alt="Bright Young Women">
+    <div class="book-info">
+        <h3>Bright Young Women</h3>
+        <p>Crime • Thriller • Mystery</p>
+    </div>
+
+</div>
+
+    </div>
+
+    <button class="arrow right">❯</button>
+
+</div>
+
+    <!-- fantasy-->
+    <h2>Fantasy</h2>
+
+<div class="row-wrapper">
+    <button class="arrow left">❮</button>
+
+    <div class="row">
+
+<div class="book-box"
+data-title="Harry Potter and the Sorcerer’s Stone"
+data-author="J.K. Rowling"
+data-genre="Fantasy Magic Adventure"
+onclick="openBook(
+  'Harry Potter and the Sorcerer’s Stone',
+  'https://m.media-amazon.com/images/I/81q77Q39nEL._AC_UF1000,1000_QL80_.jpg',
+  'J.K. Rowling',
+  '4.7 / 5',
+  'A boy discovers he is a wizard and begins his journey at Hogwarts School of Witchcraft and Wizardry.',
+  '309'
+)">
+    <img src="https://m.media-amazon.com/images/I/81q77Q39nEL._AC_UF1000,1000_QL80_.jpg"
+         alt="Harry Potter and the Sorcerer’s Stone">
+    <div class="book-info">
+        <h3>Harry Potter and the Sorcerer’s Stone</h3>
+        <p>Fantasy • Magic • Adventure</p>
+    </div>
+
+</div>
+
+
+<div class="book-box"
+data-title="Harry Potter and the Chamber of Secrets"
+data-author="J.K. Rowling"
+data-genre="Fantasy Magic Adventure"
+onclick="openBook(
+  'Harry Potter and the Chamber of Secrets',
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1DR7P8Icxu5aNfeiXApBekzCY2YjgE-sdjE1T4KIR8Q&s=10',
+  'J.K. Rowling',
+  '4.6 / 5',
+  'A mysterious chamber is opened at Hogwarts, unleashing danger hidden within the school walls.',
+  '341'
+)">
+    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ1DR7P8Icxu5aNfeiXApBekzCY2YjgE-sdjE1T4KIR8Q&s=10"
+         alt="Harry Potter and the Chamber of Secrets">
+    <div class="book-info">
+        <h3>Harry Potter and the Chamber of Secrets</h3>
+        <p>Fantasy • Magic • Adventure</p>
+    </div>
+</div>
+
+<div class="book-box"
+data-title="Harry Potter and the Prisoner of Azkaban"
+data-author="J.K. Rowling"
+data-genre="Fantasy Magic Adventure"
+onclick="openBook(
+  'Harry Potter and the Prisoner of Azkaban',
+  'https://m.media-amazon.com/images/I/81IaGnBY5GL._AC_UF1000,1000_QL80_.jpg',
+  'J.K. Rowling',
+  '4.6 / 5',
+  'A mysterious chamber is opened at Hogwarts, unleashing danger hidden within the school walls.',
+  '341'
+)">
+    <img src="https://m.media-amazon.com/images/I/81IaGnBY5GL._AC_UF1000,1000_QL80_.jpg"
+         alt="Harry Potter and the Prisoner of Azkaban">
+    <div class="book-info">
+        <h3>Harry Potter and the Prisoner of Azkaban</h3>
+        <p>Fantasy • Magic • Adventure</p>
+    </div>
+</div>
+<div class="book-box"
+data-title="Harry Potter and the goblet of Fire"
+data-author="J.K. Rowling"
+data-genre="Fantasy Magic Adventure"
+onclick="openBook(
+  'Harry Potter and the Goblet of Fire',
+'',
+  'J.K. Rowling',
+  '4.6 / 5',
+  'A mysterious chamber is opened at Hogwarts, unleashing danger hidden within the school walls.',
+  '341'
+)">
+    <img src="https://m.media-amazon.com/images/I/71-CKpDxEYL._AC_UF1000,1000_QL80_.jpg"
+         alt="Harry Potter and the Goblet of Fire">
+    <div class="book-info">
+        <h3>Harry Potter and the Goblet of Fire</h3>
+        <p>Fantasy • Magic • Adventure</p>
+    </div>
+</div>
+<div class="book-box"
+data-title="Harry Potter and the Half-Blood Prince"
+data-author="J.K. Rowling"
+data-genre="Fantasy Magic Adventure"
+onclick="openBook(
+  'Harry Potter and the Half-Blood Prince',
+'https://m.media-amazon.com/images/I/81DN1723hUL._AC_UF1000,1000_QL80_.jpg',  'J.K. Rowling',
+  '4.6 / 5',
+  'A mysterious chamber is opened at Hogwarts, unleashing danger hidden within the school walls.',
+  '341'
+)">
+    <img src="https://m.media-amazon.com/images/I/81DN1723hUL._AC_UF1000,1000_QL80_.jpg"
+         alt="Harry Potter and the Half-Blood Prince">
+    <div class="book-info">
+        <h3>Harry Potter and the Half-Blood Prince</h3>
+        <p>Fantasy • Magic • Adventure</p>
+    </div>
+</div>
+<div class="book-box"
+data-title="Harry Potter and the Deathly Hallows"
+data-author="J.K. Rowling"
+data-genre="Fantasy Magic Adventure"
+onclick="openBook(
+  'Harry Potter and the Deathly Hallows',
+  'https://m.media-amazon.com/images/I/71sH3vxziLL._AC_UF1000,1000_QL80_.jpg',
+  'J.K. Rowling',
+  '4.6 / 5',
+  'A mysterious chamber is opened at Hogwarts, unleashing danger hidden within the school walls.',
+  '341'
+)">
+    <img src="https://m.media-amazon.com/images/I/71sH3vxziLL._AC_UF1000,1000_QL80_.jpg"
+         alt="Harry Potter and the Chamber of Secrets">
+    <div class="book-info">
+        <h3>Harry Potter and the Deathly Hollows</h3>
+        <p>Fantasy • Magic • Adventure</p>
+    </div>
+</div>
+<div class="book-box"
+data-title="City of Bones"
+data-author="Cassandra Clare"
+data-genre="Fantasy Urban Magic"
+onclick="openBook(
+  'City of Bones',
+  'https://m.media-amazon.com/images/I/91Dz0CVeJyL._UF1000,1000_QL80_.jpg',
+  'Cassandra Clare',
+  '4.3 / 5',
+  'A girl discovers she belongs to a hidden world of Shadowhunters and demons.',
+  '485'
+)">
+    <img src="https://m.media-amazon.com/images/I/91Dz0CVeJyL._UF1000,1000_QL80_.jpg"
+         alt="City of Bones">
+    <div class="book-info">
+        <h3>City of Bones</h3>
+        <p>Fantasy • Urban • Magic</p>
+    </div>
+</div>
+<div class="book-box"
+data-title="Harry Potter and the Order of Phoneix"
+data-author="J.K. Rowling"
+data-genre="Fantasy Magic Adventure"
+onclick="openBook(
+  'Harry Potter and the Order of Phoneix',
+  'https://m.media-amazon.com/images/I/81Budsu1XBL.jpg',
+  'J.K. Rowling',
+  '4.6 / 5',
+  'A mysterious chamber is opened at Hogwarts, unleashing danger hidden within the school walls.',
+  '341'
+)">
+    <img src="https://m.media-amazon.com/images/I/81Budsu1XBL.jpg"
+         alt="Harry Potter and the Chamber of Secrets">
+    <div class="book-info">
+        <h3>Harry Potter and the Order of Phoenix</h3>
+        <p>Fantasy • Magic • Adventure</p>
+    </div>
+</div>
+
+<div class="book-box"
+data-title="Percy Jackson & The Lightning Thief"
+data-author="Rick Riordan"
+data-genre="Fantasy Mythology Adventure"
+onclick="openBook(
+  'Percy Jackson & The Lightning Thief',
+  'https://m.media-amazon.com/images/I/91QpZMI1CeL._AC_UF1000,1000_QL80_.jpg',
+  'Rick Riordan',
+  '4.5 / 5',
+  'A boy discovers he is the son of Poseidon and is thrown into a world of Greek gods and monsters.',
+  '377'
+)">
+    <img src="https://m.media-amazon.com/images/I/91QpZMI1CeL._AC_UF1000,1000_QL80_.jpg"
+         alt="Percy Jackson & The Lightning Thief">
+    <div class="book-info">
+        <h3>Percy Jackson & The Lightning Thief</h3>
+        <p>Fantasy • Mythology • Adventure</p>
+    </div>
+</div>
+
+<div class="book-box"
+data-title="The Hobbit"
+data-author="J.R.R. Tolkien"
+data-genre="Fantasy Adventure Epic"
+onclick="openBook(
+  'The Hobbit',
+  'https://m.media-amazon.com/images/I/71jD4jMityL._AC_UF1000,1000_QL80_.jpg',
+  'J.R.R. Tolkien',
+  '4.7 / 5',
+  'A hobbit is taken on an unexpected journey involving dragons, treasure, and great danger.',
+  '310'
+)">
+    <img src="https://m.media-amazon.com/images/I/71jD4jMityL._AC_UF1000,1000_QL80_.jpg"
+         alt="The Hobbit">
+    <div class="book-info">
+        <h3>The Hobbit</h3>
+        <p>Fantasy • Adventure • Epic</p>
+    </div>
+</div>
+
+<div class="book-box"
+data-title="The Lord of the Rings: The Fellowship of the Ring"
+data-author="J.R.R. Tolkien"
+data-genre="Epic Fantasy Adventure"
+onclick="openBook(
+  'The Fellowship of the Ring',
+  'https://m.media-amazon.com/images/I/71lKy8RoFUL._AC_UF1000,1000_QL80_.jpg',
+  'J.R.R. Tolkien',
+  '4.8 / 5',
+  'A group begins a journey to destroy a powerful ring that could bring darkness to the world.',
+  '423'
+)">
+    <img src="https://m.media-amazon.com/images/I/71lKy8RoFUL._AC_UF1000,1000_QL80_.jpg"
+         alt="The Lord of the Rings: The Fellowship of the Ring">
+    <div class="book-info">
+        <h3>The Lord of the Rings: The Fellowship of the Ring</h3>
+        <p>Epic • Fantasy • Adventure</p>
+    </div>
+
+</div>
+
+<div class="book-box"
+data-title="Twilight"
+data-author="Stephenie Meyer"
+data-genre="Fantasy Romance Vampires"
+onclick="openBook(
+  'Twilight',
+  'https://m.media-amazon.com/images/I/61eoeu1UpRL._UF1000,1000_QL80_.jpg',
+  'Stephenie Meyer',
+  '4.2 / 5',
+  'A teenage girl falls in love with a vampire, leading to dangerous consequences.',
+  '498'
+)">
+<img src="https://m.media-amazon.com/images/I/61eoeu1UpRL._UF1000,1000_QL80_.jpg"
+         alt="Twilight">
+    <div class="book-info">
+        <h3>Twilight</h3>
+        <p>Fantasy • Romance • Vampires</p>
+    </div>
+
+</div>
+
+
+<div class="book-box"
+data-title="New Moon"
+data-author="Stephenie Meyer"
+data-genre="Fantasy Romance Vampires"
+onclick="openBook(
+  'New Moon',
+  'https://m.media-amazon.com/images/I/81KvBJj7cEL._AC_UF1000,1000_QL80_.jpg',
+  'Stephenie Meyer',
+  '4.1 / 5',
+  'After heartbreak, danger and supernatural forces pull Bella into a darker world.',
+  '563'
+)">
+<img src="https://m.media-amazon.com/images/I/81KvBJj7cEL._AC_UF1000,1000_QL80_.jpg"
+         alt="New Moon">
+    <div class="book-info">
+        <h3>New Moon</h3>
+        <p>Fantasy • Romance • Vampires</p>
+    </div>
+
+</div>
+<div class="book-box"
+data-title="Divergent"
+data-author="Veronica Roth"
+data-genre="Fantasy Dystopian Adventure"
+onclick="openBook(
+  'Divergent',
+  'https://m.media-amazon.com/images/I/71wYgv30IpL._AC_UF1000,1000_QL80_.jpg',
+  'Veronica Roth',
+  '4.3 / 5',
+  'In a divided society, a girl discovers she does not fit into any single faction.',
+  '487'
+)">
+<img src="https://m.media-amazon.com/images/I/71wYgv30IpL._AC_UF1000,1000_QL80_.jpg"
+         alt="Divergent">
+    <div class="book-info">
+        <h3>Divergent</h3>
+        <p>Fantasy • Dystopian • Adventure</p>
+    </div>
+
+</div>
+<div class="book-box"
+data-title="Insurgent"
+data-author="Veronica Roth"
+data-genre="Fantasy Dystopian Adventure"
+onclick="openBook(
+  'Insurgent',
+  'https://m.media-amazon.com/images/I/71BkNeIHOdL._AC_UF1000,1000_QL80_.jpg',
+  'Veronica Roth',
+  '4.2 / 5',
+  'War breaks out as secrets of the faction system begin to unravel.',
+  '525'
+)">
+<img src="https://m.media-amazon.com/images/I/71BkNeIHOdL._AC_UF1000,1000_QL80_.jpg"
+         alt="Insurgent">
+    <div class="book-info">
+        <h3>Insurgent</h3>
+        <p>Fantasy • Dystopian • Adventure</p>
+    </div>
+</div>
+
+<div class="book-box"
+data-title="Eragon"
+data-author="Christopher Paolini"
+data-genre="Fantasy Dragons Adventure"
+onclick="openBook(
+  'Eragon',
+  'https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1366212852i/113436.jpg',
+  'Christopher Paolini',
+  '4.3 / 5',
+  'A farm boy finds a dragon egg and becomes part of an ancient prophecy.',
+  '509'
+)">
+<img src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1366212852i/113436.jpg"
+         alt="Eragon">
+    <div class="book-info">
+        <h3>Eragon</h3>
+        <p>Fantasy • Dragons • Adventure</p>
+    </div>
+
+</div>
+
+<div class="book-box"
+data-title="Shadow and Bone"
+data-author="Leigh Bardugo"
+data-genre="Fantasy Magic Adventure"
+onclick="openBook(
+  'Shadow and Bone',
+  'https://m.media-amazon.com/images/I/816JhuO1cyS.jpg',
+  'Leigh Bardugo',
+  '4.2 / 5',
+  'A girl discovers she has a rare magical power that could change her war-torn world.',
+  '356'
+)">
+<img src="https://m.media-amazon.com/images/I/816JhuO1cyS.jpg"
+         alt="Shadow and Bone">
+    <div class="book-info">
+        <h3>Shadow and Bone</h3>
+        <p>Fantasy • Magic • Adventure</p>
+    </div>
+</div>
+
+<div class="book-box"
+data-title="Six of Crows"
+data-author="Leigh Bardugo"
+data-genre="Fantasy Heist Adventure"
+onclick="openBook(
+  'Six of Crows',
+  'https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1651710803l/23437156.jpg',
+  'Leigh Bardugo',
+  '4.6 / 5',
+  'A group of criminals attempts an impossible heist in a dangerous city.',
+  '465'
+)">
+<img src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1651710803l/23437156.jpg"
+         alt="Six of Crows">
+    <div class="book-info">
+        <h3>Six of Crows</h3>
+        <p>Fantasy • Heist • Adventure</p>
+    </div>
+
+</div>
+
+<div class="book-box"
+data-title="The Cruel Prince"
+data-author="Holly Black"
+data-genre="Fantasy Fae Political"
+onclick="openBook(
+  'The Cruel Prince',
+  '',
+  'Holly Black',
+  '4.4 / 5',
+  'A mortal girl is drawn into the deadly politics of the faerie world.',
+  '370'
+)">
+<img src="https://m.media-amazon.com/images/I/91jf0gf7edL._AC_UF1000,1000_QL80_.jpg"
+         alt="The Cruel Prince">
+    <div class="book-info">
+        <h3>The Cruel Prince</h3>
+        <p>Fantasy • Fae • Political</p>
+    </div>
+</div>
+
+
+
+<div class="book-box"
+data-title="A Court of Thorns and Roses"
+data-author="Sarah J. Maas"
+data-genre="Fantasy Romance Magic"
+onclick="openBook(
+  'A Court of Thorns and Roses',
+  'https://m.media-amazon.com/images/I/81OBhRM2tjL._AC_UF1000,1000_QL80_.jpg',
+  'Sarah J. Maas',
+  '4.5 / 5',
+  'A huntress is taken into a dangerous fae world after killing a wolf.',
+  '432'
+)">
+<img src="https://m.media-amazon.com/images/I/81OBhRM2tjL._AC_UF1000,1000_QL80_.jpg"
+         alt="A Court of Thorns and Roses">
+    <div class="book-info">
+        <h3>A Court of Thorns and Roses</h3>
+        <p>Fantasy • Romance • Magic</p>
+    </div>
+</div>
+
+<div class="book-box"
+data-title="Throne of Glass"
+data-author="Sarah J. Maas"
+data-genre="Fantasy Assassin Adventure"
+onclick="openBook(
+  'Throne of Glass',
+  'https://m.media-amazon.com/images/I/81REJ3+rUOL._AC_UF1000,1000_QL80_.jpg',
+  'Sarah J. Maas',
+  '4.4 / 5',
+  'An assassin is offered freedom if she competes in a deadly tournament.',
+  '404'
+)">
+<img src="https://m.media-amazon.com/images/I/81REJ3+rUOL._AC_UF1000,1000_QL80_.jpg"
+         alt="Throne of Glass">
+    <div class="book-info">
+        <h3>Throne of Glass</h3>
+        <p>Fantasy • Assassin • Adventure</p>
+    </div>
+</div>
+
+<div class="book-box"
+data-title="The Name of the Wind"
+data-author="Patrick Rothfuss"
+data-genre="Fantasy Epic Magic"
+onclick="openBook(
+  'The Name of the Wind',
+  'https://m.media-amazon.com/images/I/611iKJa7a-L._AC_UF1000,1000_QL80_.jpg',
+  'Patrick Rothfuss',
+  '4.7 / 5',
+  'A gifted young man grows into a legendary magician while telling his own story.',
+  '662'
+)">
+<img src="https://m.media-amazon.com/images/I/611iKJa7a-L._AC_UF1000,1000_QL80_.jpg"
+         alt="The Name of the Wind">
+    <div class="book-info">
+        <h3>The Name of the Wind</h3>
+        <p>Fantasy • Epic • Magic</p>
+    </div>
+
+</div>
+    </div>
+    <button class="arrow right">❯</button>
+</div>
+
+    <!-- TEEN -->
+    <h2>Teen</h2>
+    <div class="row-wrapper">
+        <button class="arrow left">❮</button>
+
+        <div class="row">
+<div class="book-box"
+data-title="The Fault in Our Stars"
+data-author="John Green"
+data-genre="Teen Romance Drama"
+onclick="openBook(
+  'The Fault in Our Stars',
+  'https://m.media-amazon.com/images/M/MV5BYTA4ODg5YWUtYmZiYy00Y2M4LWE0NjEtODE5MzhkYmJmZGEwXkEyXkFqcGc@._V1_QL75_UY281_CR0,0,190,281_.jpg',
+  'John Green',
+  '4.5 / 5',
+  'Two teenagers with cancer meet at a support group and fall in love while facing life’s uncertainties.',
+  '313'
+)">
+<img src="https://m.media-amazon.com/images/M/MV5BYTA4ODg5YWUtYmZiYy00Y2M4LWE0NjEtODE5MzhkYmJmZGEwXkEyXkFqcGc@._V1_QL75_UY281_CR0,0,190,281_.jpg"
+         alt="The Fault in Our Stars">
+    <div class="book-info">
+        <h3>The Fault in Our Stars</h3>
+        <p>Teen Romance • Drama</p>
+    </div>
+</div>
+
+<div class="book-box"
+data-title="Looking for Alaska"
+data-author="John Green"
+data-genre="Teen Drama Mystery"
+onclick="openBook(
+  'Looking for Alaska',
+  'https://m.media-amazon.com/images/I/71BpY+LL3BL._AC_UF1000,1000_QL80_.jpg',
+  'John Green',
+  '4.2 / 5',
+  'A teenager’s life changes after meeting a mysterious girl at boarding school.',
+  '221'
+)">
+<img src="https://m.media-amazon.com/images/I/71BpY+LL3BL._AC_UF1000,1000_QL80_.jpg"
+         alt="Looking for Alaska">
+    <div class="book-info">
+        <h3>Looking for Alaska</h3>
+        <p>Teen Drama • Mystery</p>
+    </div>
+</div>
+
+<div class="book-box"
+data-title="Eleanor & Park"
+data-author="Rainbow Rowell"
+data-genre="Teen Romance"
+onclick="openBook(
+  'Eleanor & Park',
+  'https://m.media-amazon.com/images/I/71Z-ZMqurwL.jpg',
+  'Rainbow Rowell',
+  '4.4 / 5',
+  'Two misfit teens fall in love through music and comics.',
+  '325'
+)">
+<img src="https://m.media-amazon.com/images/I/71Z-ZMqurwL.jpg"
+         alt="Eleanor & Park">
+    <div class="book-info">
+        <h3>Eleanor & Park</h3>
+        <p>Teen Romance</p>
+    </div>
+</div>
+
+<div class="book-box"
+data-title="Fangirl"
+data-author="Rainbow Rowell"
+data-genre="Teen Coming-of-Age"
+onclick="openBook(
+  'Fangirl',
+  'https://rukminim2.flixcart.com/image/480/640/kzpw2vk0/book/m/p/v/fangirl-original-imagbnmufg7m5mwv.jpeg?q=20',
+  'Rainbow Rowell',
+  '4.3 / 5',
+  'A shy college freshman learns to navigate life while writing fanfiction.',
+  '438'
+)">
+<img src="https://rukminim2.flixcart.com/image/480/640/kzpw2vk0/book/m/p/v/fangirl-original-imagbnmufg7m5mwv.jpeg?q=20"
+         alt="Fangirl">
+    <div class="book-info">
+        <h3>Fangirl</h3>
+        <p>Teen • Coming-of-Age</p>
+    </div>
+</div>
+
+<div class="book-box"
+data-title="Five Feet Apart"
+data-author="Rachael Lippincott"
+data-genre="Teen Romance Drama"
+onclick="openBook(
+  'Five Feet Apart',
+  'https://m.media-amazon.com/images/I/71PyMfLeyUL._AC_UF1000,1000_QL80_.jpg',
+  'Rachael Lippincott',
+  '4.3 / 5',
+  'Two teens with cystic fibrosis fall in love but must stay apart for safety.',
+  '288'
+)">
+<img src="https://m.media-amazon.com/images/I/71PyMfLeyUL._AC_UF1000,1000_QL80_.jpg"
+         alt="Five Feet Apart">
+    <div class="book-info">
+        <h3>Five Feet Apart</h3>
+        <p>Teen Romance • Drama</p>
+    </div>
+</div>
+<div class="book-box"
+data-title="The Sun Is Also a Star"
+data-author="Nicola Yoon"
+data-genre="Teen Romance Drama"
+onclick="openBook(
+  'The Sun Is Also a Star',
+  'https://m.media-amazon.com/images/I/91gB0+9Mz6L._AC_UF1000,1000_QL80_.jpg',
+  'Nicola Yoon',
+  '4.2 / 5',
+  'Two teenagers meet by chance in New York and fall in love while fate threatens to separate them.',
+  '384'
+)">
+<img src="https://m.media-amazon.com/images/I/91gB0+9Mz6L._AC_UF1000,1000_QL80_.jpg" 
+alt="The Sun Is Also a Star">
+<div class="book-info">
+<h3>The Sun Is Also a Star</h3>
+<p>Teen Romance • Drama</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Everything, Everything"
+data-author="Nicola Yoon"
+data-genre="Teen Romance Drama"
+onclick="openBook(
+  'Everything, Everything',
+  'https://m.media-amazon.com/images/I/914-6Ymi2cL._AC_UF1000,1000_QL80_.jpg',
+  'Nicola Yoon',
+  '4.2 / 5',
+  'A girl allergic to the outside world falls in love with the boy next door.',
+  '310'
+)">
+<img src="https://m.media-amazon.com/images/I/914-6Ymi2cL._AC_UF1000,1000_QL80_.jpg" 
+alt="Everything, Everything">
+<div class="book-info">
+<h3>Everything, Everything</h3>
+<p>Teen Romance • Drama</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="To All the Boys I've Loved Before"
+data-author="Jenny Han"
+data-genre="Teen Romance"
+onclick="openBook(
+  'To All the Boys I’ve Loved Before',
+  'https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781665983105/to-all-the-boys-ive-loved-before-the-graphic-novel-9781665983105_hr.jpg',
+  'Jenny Han',
+  '4.4 / 5',
+  'A girl’s secret love letters are accidentally sent to her past crushes.',
+  '355'
+)">
+<img src="https://d28hgpri8am2if.cloudfront.net/book_images/onix/cvr9781665983105/to-all-the-boys-ive-loved-before-the-graphic-novel-9781665983105_hr.jpg"
+ alt="To All the Boys I've Loved Before">
+<div class="book-info">
+<h3>To All the Boys I've Loved Before</h3>
+<p>Teen Romance</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="The Summer I Turned Pretty"
+data-author="Jenny Han"
+data-genre="Teen Romance Drama"
+onclick="openBook(
+  'The Summer I Turned Pretty',
+  'https://m.media-amazon.com/images/I/71IS0XyHfhL._UF1000,1000_QL80_.jpg',
+  'Jenny Han',
+  '4.2 / 5',
+  'A summer at the beach changes everything in a girl’s love life.',
+  '291'
+)">
+<img src="https://m.media-amazon.com/images/I/71IS0XyHfhL._UF1000,1000_QL80_.jpg" 
+alt="The Summer I Turned Pretty">
+<div class="book-info">
+<h3>The Summer I Turned Pretty</h3>
+<p>Teen Romance • Drama</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="We Were Liars"
+data-author="E. Lockhart"
+data-genre="Teen Mystery Drama"
+onclick="openBook(
+  'We Were Liars',
+  'https://img2.od-cdn.com/ImageType-100/1191-1/%7B75D09028-CD00-49A8-AD4D-68BB7633D686%7DIMG100.JPG',
+  'E. Lockhart',
+  '4.1 / 5',
+  'A rich family’s summer turns tragic with secrets no one talks about.',
+  '227'
+)">
+<img src="https://img2.od-cdn.com/ImageType-100/1191-1/%7B75D09028-CD00-49A8-AD4D-68BB7633D686%7DIMG100.JPG"
+ alt="We Were Liars">
+<div class="book-info">
+<h3>We Were Liars</h3>
+<p>Teen Mystery • Drama</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="One of Us Is Lying"
+data-author="Karen M. McManus"
+data-genre="Teen Mystery Thriller"
+onclick="openBook(
+  'One of Us Is Lying',
+  'https://m.media-amazon.com/images/I/81cOaGbJ87L._AC_UF1000,1000_QL80_.jpg',
+  'Karen M. McManus',
+  '4.4 / 5',
+  'Five students go into detention but only four come out alive.',
+  '360'
+)">
+<img src="https://m.media-amazon.com/images/I/81cOaGbJ87L._AC_UF1000,1000_QL80_.jpg" 
+alt="One of Us Is Lying">
+<div class="book-info">
+<h3>One of Us Is Lying</h3>
+<p>Teen Mystery • Thriller</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="The Inheritance Games"
+data-author="Jennifer Lynn Barnes"
+data-genre="Teen Mystery"
+onclick="openBook(
+  'The Inheritance Games',
+  'https://m.media-amazon.com/images/I/81UstdoeFqL._UF1000,1000_QL80_.jpg',
+  'Jennifer Lynn Barnes',
+  '4.5 / 5',
+  'A girl inherits a billionaire’s fortune and must solve puzzles to survive.',
+  '384'
+)">
+<img src="https://m.media-amazon.com/images/I/81UstdoeFqL._UF1000,1000_QL80_.jpg" 
+alt="The Inheritance Games">
+<div class="book-info">
+<h3>The Inheritance Games</h3>
+<p>Teen Mystery</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="A Good Girl’s Guide to Murder"
+data-author="Holly Jackson"
+data-genre="Teen Mystery Crime"
+onclick="openBook(
+  'A Good Girl’s Guide to Murder',
+  'https://m.media-amazon.com/images/I/81pEIB02WxL._UF1000,1000_QL80_.jpg',
+  'Holly Jackson',
+  '4.6 / 5',
+  'A student investigates a closed murder case for a school project.',
+  '433'
+)">
+<img src="https://m.media-amazon.com/images/I/81pEIB02WxL._UF1000,1000_QL80_.jpg" 
+alt="A Good Girl’s Guide to Murder">
+<div class="book-info">
+<h3>A Good Girl’s Guide to Murder</h3>
+<p>Teen Mystery • Crime</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="They Both Die at the End"
+data-author="Adam Silvera"
+data-genre="Teen Drama Romance"
+onclick="openBook(
+  'They Both Die at the End',
+  'https://m.media-amazon.com/images/I/71uRu9azSPL._AC_UF1000,1000_QL80_.jpg',
+  'Adam Silvera',
+  '4.4 / 5',
+  'Two strangers spend their last day together after learning they will die within 24 hours.',
+  '373'
+)">
+<img src="https://m.media-amazon.com/images/I/71uRu9azSPL._AC_UF1000,1000_QL80_.jpg" 
+alt="They Both Die at the End">
+<div class="book-info">
+<h3>They Both Die at the End</h3>
+<p>Teen Drama • Romance</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="The Maze Runner"
+data-author="James Dashner"
+data-genre="Teen Sci-Fi Adventure"
+onclick="openBook(
+  'The Maze Runner',
+  'https://m.media-amazon.com/images/I/71gl2fmAp7L._AC_UF1000,1000_QL80_.jpg',
+  'James Dashner',
+  '4.3 / 5',
+  'A boy wakes up in a maze with no memory and must find a way out.',
+  '375'
+)">
+<img src="https://m.media-amazon.com/images/I/71gl2fmAp7L._AC_UF1000,1000_QL80_.jpg" 
+alt="The Maze Runner">
+<div class="book-info">
+<h3>The Maze Runner</h3>
+<p>Teen Sci-Fi • Adventure</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Divergent"
+data-author="Veronica Roth"
+data-genre="Teen Dystopian Action"
+onclick="openBook(
+  'Divergent',
+  'https://m.media-amazon.com/images/I/91oNu+R7EUL._AC_UF1000,1000_QL80_.jpg',
+  'Veronica Roth',
+  '4.3 / 5',
+  'A girl discovers she does not fit into any faction in a divided society.',
+  '487'
+)">
+<img src="https://m.media-amazon.com/images/I/91oNu+R7EUL._AC_UF1000,1000_QL80_.jpg" 
+alt="Divergent">
+<div class="book-info">
+<h3>Divergent</h3>
+<p>Teen Dystopian • Action</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Insurgent"
+data-author="Veronica Roth"
+data-genre="Teen Dystopian Action"
+onclick="openBook(
+  'Insurgent',
+  'https://m.media-amazon.com/images/I/71BkNeIHOdL._AC_UF1000,1000_QL80_.jpg',
+  'Veronica Roth',
+  '4.2 / 5',
+  'War breaks out as secrets of the factions are revealed.',
+  '525'
+)">
+<img src="https://m.media-amazon.com/images/I/71BkNeIHOdL._AC_UF1000,1000_QL80_.jpg" 
+alt="Insurgent">
+<div class="book-info">
+<h3>Insurgent</h3>
+<p>Teen Dystopian • Action</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="The Hunger Games"
+data-author="Suzanne Collins"
+data-genre="Teen Dystopian Action"
+onclick="openBook(
+  'The Hunger Games',
+  'https://m.media-amazon.com/images/I/71un2hI4mcL._AC_UF1000,1000_QL80_.jpg',
+  'Suzanne Collins',
+  '4.7 / 5',
+  'A girl is forced into a deadly televised survival game.',
+  '374'
+)">
+<img src="https://m.media-amazon.com/images/I/71un2hI4mcL._AC_UF1000,1000_QL80_.jpg" 
+alt="The Hunger Games">
+<div class="book-info">
+<h3>The Hunger Games</h3>
+<p>Teen Dystopian • Action</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Catching Fire"
+data-author="Suzanne Collins"
+data-genre="Teen Dystopian Action"
+onclick="openBook(
+  'Catching Fire',
+  'https://m.media-amazon.com/images/I/71e9wjuvcJL._AC_UF1000,1000_QL80_.jpg',
+  'Suzanne Collins',
+  '4.7 / 5',
+  'Katniss becomes the symbol of rebellion against the Capitol.',
+  '391'
+)">
+<img src="https://m.media-amazon.com/images/I/71e9wjuvcJL._AC_UF1000,1000_QL80_.jpg" 
+alt="Catching Fire">
+<div class="book-info">
+<h3>Catching Fire</h3>
+<p>Teen Dystopian • Action</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Mockingjay"
+data-author="Suzanne Collins"
+data-genre="Teen Dystopian Action"
+onclick="openBook(
+  'Mockingjay',
+  'https://m.media-amazon.com/images/I/61n5pTMvmpL._AC_UF1000,1000_QL80_.jpg',
+  'Suzanne Collins',
+  '4.6 / 5',
+  'Katniss leads a revolution to overthrow the Capitol.',
+  '390'
+)">
+<img src="https://m.media-amazon.com/images/I/61n5pTMvmpL._AC_UF1000,1000_QL80_.jpg" 
+alt="Mockingjay">
+<div class="book-info">
+<h3>Mockingjay</h3>
+<p>Teen Dystopian • Action</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="The Perks of Being a Wallflower"
+data-author="Stephen Chbosky"
+data-genre="Teen Coming-of-Age Drama"
+onclick="openBook(
+  'The Perks of Being a Wallflower',
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmW-EqwdAURhv422H2qAUNjyNxHdwakgu_YWdSM21YtJUqN8TzmT6sIhg&s=10',
+  'Stephen Chbosky',
+  '4.5 / 5',
+  'A shy teen experiences friendship, love, and mental struggles through letters.',
+  '224'
+)">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQmW-EqwdAURhv422H2qAUNjyNxHdwakgu_YWdSM21YtJUqN8TzmT6sIhg&s=10" 
+alt="The Perks of Being a Wallflower">
+<div class="book-info">
+<h3>The Perks of Being a Wallflower</h3>
+<p>Teen Coming-of-Age • Drama</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Twilight"
+data-author="Stephenie Meyer"
+data-genre="Teen Fantasy Romance"
+onclick="openBook(
+  'Twilight',
+  'https://m.media-amazon.com/images/I/41hCip97dnL._AC_UF1000,1000_QL80_.jpg',
+  'Stephenie Meyer',
+  '4.2 / 5',
+  'A girl falls in love with a vampire and enters a dangerous world.',
+  '498'
+)">
+<img src="https://m.media-amazon.com/images/I/41hCip97dnL._AC_UF1000,1000_QL80_.jpg" 
+alt="Twilight">
+<div class="book-info">
+<h3>Twilight</h3>
+<p>Teen• Fantasy • Romance</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Vampire Academy"
+data-author="Richelle Mead"
+data-genre="Teen Fantasy Vampires"
+onclick="openBook(
+  'Vampire Academy',
+  'https://m.media-amazon.com/images/I/81fXfVm5HdL.jpg',
+  'Richelle Mead',
+  '4.2 / 5',
+  'A guardian-in-training uncovers dark secrets inside a vampire academy.',
+  '332'
+)">
+<img src="https://m.media-amazon.com/images/I/81fXfVm5HdL.jpg" 
+alt="Vampire Academy">
+<div class="book-info">
+<h3>Vampire Academy</h3>
+<p>Teen Fantasy • Vampires</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="City of Bones"
+data-author="Cassandra Clare"
+data-genre="Teen Fantasy Urban"
+onclick="openBook(
+  'City of Bones',
+  'https://m.media-amazon.com/images/I/91Dz0CVeJyL._UF1000,1000_QL80_.jpg',
+  'Cassandra Clare',
+  '4.3 / 5',
+  'A girl discovers a hidden world of Shadowhunters and demons.',
+  '485'
+)">
+<img src="https://m.media-amazon.com/images/I/91Dz0CVeJyL._UF1000,1000_QL80_.jpg" 
+alt="City of Bones">
+<div class="book-info">
+<h3>City of Bones</h3>
+<p>Teen Fantasy • Urban</p>
+</div>
+</div>
+ </div>
+
+<button class="scroll-btn right">❯</button>
+    </div>
+
+    <!-- ROMANCE -->
+    <h2>Romance</h2>
+    <div class="row-wrapper">
+<button class="scroll-btn left">❮</button>
+
+        <div class="row">
+            <div class="book-box"
+data-title="Pride and Prejudice"
+data-author="Jane Austen"
+data-genre="Romance Classic Drama"
+onclick="openBook(
+  'Pride and Prejudice',
+  'https://m.media-amazon.com/images/M/MV5BMTA1NDQ3NTcyOTNeQTJeQWpwZ15BbWU3MDA0MzA4MzE@._V1_FMjpg_UX1000_.jpg',
+  'Jane Austen',
+  '4.6 / 5',
+  'A slow-burn romance between Elizabeth Bennet and Mr. Darcy filled with misunderstandings and pride.',
+  '432'
+)">
+<img src="https://m.media-amazon.com/images/M/MV5BMTA1NDQ3NTcyOTNeQTJeQWpwZ15BbWU3MDA0MzA4MzE@._V1_FMjpg_UX1000_.jpg" 
+alt="Pride and Prejudice">
+<div class="book-info">
+<h3>Pride and Prejudice</h3>
+<p>Romance • Classic</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Me Before You"
+data-author="Jojo Moyes"
+data-genre="Romance Drama"
+onclick="openBook(
+  'Me Before You',
+  'https://m.media-amazon.com/images/I/81fTRhi9E+L._AC_UF1000,1000_QL80_.jpg',
+  'Jojo Moyes',
+  '4.4 / 5',
+  'A young woman becomes caretaker to a wealthy man whose life changes hers forever.',
+  '369'
+)">
+<img src="https://m.media-amazon.com/images/I/81fTRhi9E+L._AC_UF1000,1000_QL80_.jpg" 
+alt="Me Before You">
+<div class="book-info">
+<h3>Me Before You</h3>
+<p>Romance • Drama</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="The Notebook"
+data-author="Nicholas Sparks"
+data-genre="Romance Drama"
+onclick="openBook(
+  'The Notebook',
+  'https://m.media-amazon.com/images/I/81MyijLIpkL._AC_UF1000,1000_QL80_.jpg',
+  'Nicholas Sparks',
+  '4.5 / 5',
+  'A timeless love story between Noah and Allie that survives memory loss and time.',
+  '214'
+)">
+<img src="https://m.media-amazon.com/images/I/81MyijLIpkL._AC_UF1000,1000_QL80_.jpg" 
+alt="The Notebook">
+<div class="book-info">
+<h3>The Notebook</h3>
+<p>Romance • Drama</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="It Ends With Us"
+data-author="Colleen Hoover"
+data-genre="Romance Drama Contemporary"
+onclick="openBook(
+  'It Ends With Us',
+  'https://rukminim2.flixcart.com/image/480/640/xif0q/regionalbooks/p/h/v/it-starts-with-us-original-imagrhat8bzy3h73.jpeg?q=90',
+  'Colleen Hoover',
+  '4.5 / 5',
+  'A woman falls into a complicated relationship that forces her to confront her past.',
+  '376'
+)">
+<img src="https://rukminim2.flixcart.com/image/480/640/xif0q/regionalbooks/p/h/v/it-starts-with-us-original-imagrhat8bzy3h73.jpeg?q=90" 
+alt="It Ends With Us">
+<div class="book-info">
+<h3>It Ends With Us</h3>
+<p>Romance • Drama</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="It Starts With Us"
+data-author="Colleen Hoover"
+data-genre="Romance Drama Contemporary"
+onclick="openBook(
+  'It Starts With Us',
+  'https://m.media-amazon.com/images/I/81uIph9QW7L._AC_UF1000,1000_QL80_.jpg',
+  'Colleen Hoover',
+  '4.3 / 5',
+  'A continuation of Lily’s story as she tries to rebuild her life and love.',
+  '336'
+)">
+<img src="https://m.media-amazon.com/images/I/81uIph9QW7L._AC_UF1000,1000_QL80_.jpg" 
+alt="It Starts With Us">
+<div class="book-info">
+<h3>It Starts With Us</h3>
+<p>Romance • Drama</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Twisted Love"
+data-author="Ana Huang"
+data-genre="Romance Contemporary"
+onclick="openBook(
+  'Twisted Love',
+  'https://m.media-amazon.com/images/I/71YJet75sxL._AC_UF1000,1000_QL80_.jpg',
+  'Ana Huang',
+  '4.3 / 5',
+  'A cold, emotionally guarded man and a free-spirited woman fall into a dangerous romance.',
+  '358'
+)">
+<img src="https://m.media-amazon.com/images/I/71YJet75sxL._AC_UF1000,1000_QL80_.jpg" 
+alt="Twisted Love">
+<div class="book-info">
+<h3>Twisted Love</h3>
+<p>Romance • Contemporary</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Twisted Games"
+data-author="Ana Huang"
+data-genre="Romance Royal"
+onclick="openBook(
+  'Twisted Games',
+  'https://m.media-amazon.com/images/I/71I+IS0Xx-L._AC_UF1000,1000_QL80_.jpg',
+  'Ana Huang',
+  '4.4 / 5',
+  'A bodyguard and a princess struggle with duty and forbidden attraction.',
+  '410'
+)">
+<img src="https://m.media-amazon.com/images/I/71I+IS0Xx-L._AC_UF1000,1000_QL80_.jpg"
+ alt="Twisted Games">
+<div class="book-info">
+<h3>Twisted Games</h3>
+<p>Romance • Royal</p>
+</div>
+</div>
+
+
+<div class="book-box"
+data-title="Beach Read"
+data-author="Emily Henry"
+data-genre="Romance Contemporary"
+onclick="openBook(
+  'Beach Read',
+  'https://m.media-amazon.com/images/I/71kdiN5Y1YL._AC_UF1000,1000_QL80_.jpg',
+  'Emily Henry',
+  '4.2 / 5',
+  'Two rival authors spend a summer rewriting each other’s stories and their own lives.',
+  '372'
+)">
+<img src="https://m.media-amazon.com/images/I/71kdiN5Y1YL._AC_UF1000,1000_QL80_.jpg" 
+alt="Beach Read">
+<div class="book-info">
+<h3>Beach Read</h3>
+<p>Romance • Contemporary</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Book Lovers"
+data-author="Emily Henry"
+data-genre="Romance Contemporary"
+onclick="openBook(
+  'Book Lovers',
+  'https://m.media-amazon.com/images/I/71BEeLXNGuL._AC_UF1000,1000_QL80_.jpg',
+  'Emily Henry',
+  '4.3 / 5',
+  'A literary agent and editor keep running into each other in a small town full of surprises.',
+  '377'
+)">
+<img src="https://m.media-amazon.com/images/I/71BEeLXNGuL._AC_UF1000,1000_QL80_.jpg" 
+alt="Book Lovers">
+<div class="book-info">
+<h3>Book Lovers</h3>
+<p>Romance • Contemporary</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="The Love Hypothesis"
+data-author="Ali Hazelwood"
+data-genre="Romance STEM"
+onclick="openBook(
+  'The Love Hypothesis',
+  'https://m.media-amazon.com/images/I/81plBFoPgtL._AC_UF1000,1000_QL80_.jpg',
+  'Ali Hazelwood',
+  '4.4 / 5',
+  'A fake relationship between a scientist and professor turns unexpectedly real.',
+  '356'
+)">
+<img src="https://m.media-amazon.com/images/I/81plBFoPgtL._AC_UF1000,1000_QL80_.jpg" 
+alt="The Love Hypothesis">
+<div class="book-info">
+<h3>The Love Hypothesis</h3>
+<p>Romance • STEM</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Red, White & Royal Blue"
+data-author="Casey McQuiston"
+data-genre="Romance LGBTQ Royal"
+onclick="openBook(
+  'Red, White & Royal Blue',
+  'https://m.media-amazon.com/images/I/51ixkUXsmVL._AC_UF1000,1000_QL80_.jpg',
+  'Casey McQuiston',
+  '4.5 / 5',
+  'The First Son of the USA falls in love with a British prince.',
+  '421'
+)">
+<img src="https://m.media-amazon.com/images/I/51ixkUXsmVL._AC_UF1000,1000_QL80_.jpg" 
+alt="Red, White & Royal Blue">
+<div class="book-info">
+<h3>Red, White & Royal Blue</h3>
+<p>Romance • Royal</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Ugly Love"
+data-author="Colleen Hoover"
+data-genre="Romance Drama"
+onclick="openBook(
+  'Ugly Love',
+  'https://m.media-amazon.com/images/I/71E8VNPC1dL._AC_UF1000,1000_QL80_.jpg',
+  'Colleen Hoover',
+  '4.3 / 5',
+  'A no-strings relationship turns emotionally complicated when feelings grow.',
+  '333'
+)">
+<img src="https://m.media-amazon.com/images/I/71E8VNPC1dL._AC_UF1000,1000_QL80_.jpg" 
+alt="Ugly Love">
+<div class="book-info">
+<h3>Ugly Love</h3>
+<p>Romance • Drama</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Verity"
+data-author="Colleen Hoover"
+data-genre="Romance Thriller"
+onclick="openBook(
+  'Verity',
+  'https://m.media-amazon.com/images/I/71CDMQcvKiL._AC_UF1000,1000_QL80_.jpg',
+  'Colleen Hoover',
+  '4.4 / 5',
+  'A struggling writer discovers disturbing secrets in an unfinished manuscript.',
+  '336'
+)">
+<img src="https://m.media-amazon.com/images/I/71CDMQcvKiL._AC_UF1000,1000_QL80_.jpg" 
+alt="Verity">
+<div class="book-info">
+<h3>Verity</h3>
+<p>Romance • Thriller</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="The Hating Game"
+data-author="Sally Thorne"
+data-genre="Romance Office"
+onclick="openBook(
+  'The Hating Game',
+  'https://m.media-amazon.com/images/I/817HkQzwK8L._AC_UF1000,1000_QL80_.jpg',
+  'Sally Thorne',
+  '4.3 / 5',
+  'Two office rivals realize their hatred might actually be attraction.',
+  '365'
+)">
+<img src="https://m.media-amazon.com/images/I/817HkQzwK8L._AC_UF1000,1000_QL80_.jpg"
+ alt="The Hating Game">
+<div class="book-info">
+<h3>The Hating Game</h3>
+<p>Romance • Office</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="The Spanish Love Deception"
+data-author="Elena Armas"
+data-genre="Romance Fake Dating"
+onclick="openBook(
+  'The Spanish Love Deception',
+  'https://m.media-amazon.com/images/I/61q6zUkQwOL.jpg',
+  'Elena Armas',
+  '4.3 / 5',
+  'A fake boyfriend arrangement turns into real love during a wedding trip.',
+  '487'
+)">
+<img src="https://m.media-amazon.com/images/I/61q6zUkQwOL.jpg" 
+alt="The Spanish Love Deception">
+<div class="book-info">
+<h3>The Spanish Love Deception</h3>
+<p>Romance • Fake Dating</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Reminders of Him"
+data-author="Colleen Hoover"
+data-genre="Romance Drama"
+onclick="openBook(
+  'Reminders of Him',
+  'https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1627673942i/58341222.jpg',
+  'Colleen Hoover',
+  '4.4 / 5',
+  'A woman returns from prison and tries to reconnect with her daughter.',
+  '385'
+)">
+<img src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1627673942i/58341222.jpg" 
+alt="Reminders of Him">
+<div class="book-info">
+<h3>Reminders of Him</h3>
+<p>Romance • Drama</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="The Kiss Quotient"
+data-author="Helen Hoang"
+data-genre="Romance Contemporary"
+onclick="openBook(
+  'The Kiss Quotient',
+  'https://m.media-amazon.com/images/I/81mKbEH0G2L._AC_UF1000,1000_QL80_.jpg',
+  'Helen Hoang',
+  '4.2 / 5',
+  'A woman hires an escort to help her understand relationships and love.',
+  '323'
+)">
+<img src="https://m.media-amazon.com/images/I/81mKbEH0G2L._AC_UF1000,1000_QL80_.jpg" 
+alt="The Kiss Quotient">
+<div class="book-info">
+<h3>The Kiss Quotient</h3>
+<p>Romance • Contemporary</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Better Than the Movies"
+data-author="Lynn Painter"
+data-genre="Romance Teen"
+onclick="openBook(
+  'Better Than the Movies',
+  'https://m.media-amazon.com/images/I/71vflgiZIUL.jpg',
+  'Lynn Painter',
+  '4.4 / 5',
+  'A rom-com loving girl experiences her own love story in real life.',
+  '356'
+)">
+<img src="https://m.media-amazon.com/images/I/71vflgiZIUL.jpg" 
+alt="Better Than the Movies">
+<div class="book-info">
+<h3>Better Than the Movies</h3>
+<p>Romance • Teen</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="November 9"
+data-author="Colleen Hoover"
+data-genre="Romance Drama"
+onclick="openBook(
+  'November 9',
+  'https://m.media-amazon.com/images/I/71elzUXpa7L._AC_UF1000,1000_QL80_.jpg',
+  'Colleen Hoover',
+  '4.3 / 5',
+  'Two strangers meet every year on the same date, changing their lives forever.',
+  '320'
+)">
+<img src="https://m.media-amazon.com/images/I/71elzUXpa7L._AC_UF1000,1000_QL80_.jpg" 
+alt="November 9">
+<div class="book-info">
+<h3>November 9</h3>
+<p>Romance • Drama</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Love and Other Words"
+data-author="Christina Lauren"
+data-genre="Romance Second Chance"
+onclick="openBook(
+  'Love and Other Words',
+  'https://m.media-amazon.com/images/I/719CLtj6ndL.jpg',
+  'Christina Lauren',
+  '4.3 / 5',
+  'Childhood friends reunite years later and confront lost love.',
+  '368'
+)">
+<img src="https://m.media-amazon.com/images/I/719CLtj6ndL.jpg" 
+alt="Love and Other Words">
+<div class="book-info">
+<h3>Love and Other Words</h3>
+<p>Romance • Second Chance</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="The Unhoneymooners"
+data-author="Christina Lauren"
+data-genre="Romance Comedy"
+onclick="openBook(
+  'The Unhoneymooners',
+  'https://m.media-amazon.com/images/I/81SRaxszpHL.jpg',
+  'Christina Lauren',
+  '4.2 / 5',
+  'Two enemies go on a honeymoon trip together after a wedding disaster.',
+  '372'
+)">
+<img src="https://m.media-amazon.com/images/I/81SRaxszpHL.jpg" 
+alt="The Unhoneymooners">
+<div class="book-info">
+<h3>The Unhoneymooners</h3>
+<p>Romance • Comedy</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="After"
+data-author="Anna Todd"
+data-genre="Romance Drama Teen"
+onclick="openBook(
+  'After',
+  'https://m.media-amazon.com/images/I/61zvre1ykbL._UF1000,1000_QL80_.jpg',
+  'Anna Todd',
+  '4.1 / 5',
+  'A good girl falls for a rebellious boy with a complicated past.',
+  '582'
+)">
+<img src="https://m.media-amazon.com/images/I/61zvre1ykbL._UF1000,1000_QL80_.jpg" 
+alt="After">
+<div class="book-info">
+<h3>After</h3>
+<p>Romance • Teen Drama</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Beautiful Disaster"
+data-author="Jamie McGuire"
+data-genre="Romance Drama"
+onclick="openBook(
+  'Beautiful Disaster',
+  'https://m.media-amazon.com/images/I/815UM9D+lKL._AC_UF1000,1000_QL80_.jpg',
+  'Jamie McGuire',
+  '4.2 / 5',
+  'A college girl is drawn to a dangerous underground fighter.',
+  '432'
+)">
+<img src="https://m.media-amazon.com/images/I/815UM9D+lKL._AC_UF1000,1000_QL80_.jpg" 
+alt="Beautiful Disaster">
+<div class="book-info">
+<h3>Beautiful Disaster</h3>
+<p>Romance • Drama</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Twisted Lies"
+data-author="Ana Huang"
+data-genre="Romance Contemporary"
+onclick="openBook(
+  'Twisted Lies',
+  'https://m.media-amazon.com/images/I/71jYp3aIf9L._AC_UF1000,1000_QL80_.jpg',
+  'Ana Huang',
+  '4.4 / 5',
+  'A billionaire and influencer enter a fake relationship that becomes real.',
+  '416'
+)">
+<img src="https://m.media-amazon.com/images/I/71jYp3aIf9L._AC_UF1000,1000_QL80_.jpg" 
+alt="Twisted Lies">
+<div class="book-info">
+<h3>Twisted Lies</h3>
+<p>Romance • Contemporary</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="The Friend Zone"
+data-author="Abby Jimenez"
+data-genre="Romance Comedy Drama"
+onclick="openBook(
+  'The Friend Zone',
+  'https://m.media-amazon.com/images/I/61u2RexxwPL._UF1000,1000_QL80_.jpg',
+  'Abby Jimenez',
+  '4.3 / 5',
+  'A woman with a medical condition struggles with falling in love.',
+  '385'
+)">
+<img src="https://m.media-amazon.com/images/I/61u2RexxwPL._UF1000,1000_QL80_.jpg"
+ alt="The Friend Zone">
+<div class="book-info">
+<h3>The Friend Zone</h3>
+<p>Romance • Comedy • Drama</p>
+</div>
+</div>
+
+        </div>
+        <button class="scroll-btn right">❯</button>
+    </div>
+</section>
+
+    <!-- HORROR -->
+
+<h2>Horror</h2>
+
+<div class="row-wrapper">
+<button class="arrow left">❮</button>
+    <div class="row">
+        <div class="book-box"
+data-title="The Shining"
+data-author="Stephen King"
+data-genre="Horror Psychological Thriller"
+onclick="openBook(
+  'The Shining',
+  'https://m.media-amazon.com/images/I/61evFv7CJ5L._AC_UF1000,1000_QL80_.jpg',
+  'Stephen King',
+  '4.6 / 5',
+  'A family stays in an isolated hotel where dark supernatural forces begin to take control of the father.',
+  '447'
+)">
+<img src="https://m.media-amazon.com/images/I/61evFv7CJ5L._AC_UF1000,1000_QL80_.jpg" 
+alt="The Shining">
+<div class="book-info">
+<h3>The Shining</h3>
+<p>Horror • Psychological</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="It"
+data-author="Stephen King"
+data-genre="Horror Supernatural Thriller"
+onclick="openBook(
+  'It',
+  'https://m.media-amazon.com/images/I/71zwC11HuKL._AC_UF1000,1000_QL80_.jpg',
+  'Stephen King',
+  '4.7 / 5',
+  'A group of kids faces a terrifying shape-shifting entity that returns every 27 years.',
+  '1138'
+)">
+<img src="https://m.media-amazon.com/images/I/71zwC11HuKL._AC_UF1000,1000_QL80_.jpg" 
+alt="It">
+<div class="book-info">
+<h3>It</h3>
+<p>Horror • Supernatural</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="The Haunting of Hill House"
+data-author="Shirley Jackson"
+data-genre="Horror Classic Mystery"
+onclick="openBook(
+  'The Haunting of Hill House',
+  'https://m.media-amazon.com/images/I/812mSA9tBAL.jpg',
+  'Shirley Jackson',
+  '4.3 / 5',
+  'A group investigates a haunted mansion where reality begins to break apart.',
+  '246'
+)">
+<img src="https://m.media-amazon.com/images/I/812mSA9tBAL.jpg" 
+alt="The Haunting of Hill House">
+<div class="book-info">
+<h3>The Haunting of Hill House</h3>
+<p>Horror • Classic</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Bird Box"
+data-author="Josh Malerman"
+data-genre="Horror Thriller Post-Apocalyptic"
+onclick="openBook(
+  'Bird Box',
+  'https://m.media-amazon.com/images/I/815WObgvctL._AC_UF1000,1000_QL80_.jpg',
+  'Josh Malerman',
+  '4.1 / 5',
+  'A mysterious force causes people to die if they look at it, forcing survivors to live blindfolded.',
+  '272'
+)">
+<img src="https://m.media-amazon.com/images/I/815WObgvctL._AC_UF1000,1000_QL80_.jpg" 
+alt="Bird Box">
+<div class="book-info">
+<h3>Bird Box</h3>
+<p>Horror • Thriller</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="The Exorcist"
+data-author="William Peter Blatty"
+data-genre="Horror Supernatural"
+onclick="openBook(
+  'The Exorcist',
+  'https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1328328757i/11098034.jpg',
+  'William Peter Blatty',
+  '4.5 / 5',
+  'A young girl becomes possessed by a demonic force, leading to a terrifying exorcism.',
+  '340'
+)">
+<img src="https://m.media-amazon.com/images/S/compressed.photo.goodreads.com/books/1328328757i/11098034.jpg" 
+alt="The Exorcist">
+<div class="book-info">
+<h3>The Exorcist</h3>
+<p>Horror • Supernatural</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Dracula"
+data-author="Bram Stoker"
+data-genre="Horror Classic Vampires"
+onclick="openBook(
+  'Dracula',
+  'https://m.media-amazon.com/images/I/61jl29eQPSL._UF1000,1000_QL80_.jpg',
+  'Bram Stoker',
+  '4.4 / 5',
+  'A vampire travels from Transylvania to England spreading terror and darkness.',
+  '418'
+)">
+<img src="https://m.media-amazon.com/images/I/61jl29eQPSL._UF1000,1000_QL80_.jpg" 
+alt="Dracula">
+<div class="book-info">
+<h3>Dracula</h3>
+<p>Horror • Classic</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Mexican Gothic"
+data-author="Silvia Moreno-Garcia"
+data-genre="Horror Gothic Mystery"
+onclick="openBook(
+  'Mexican Gothic',
+  'https://m.media-amazon.com/images/I/81+MHDQpm9L._AC_UF1000,1000_QL80_.jpg',
+  'Silvia Moreno-Garcia',
+  '4.2 / 5',
+  'A woman investigates a haunted mansion filled with dark family secrets.',
+  '301'
+)">
+<img src="https://m.media-amazon.com/images/I/81+MHDQpm9L._AC_UF1000,1000_QL80_.jpg" 
+alt="Mexican Gothic">
+<div class="book-info">
+<h3>Mexican Gothic</h3>
+<p>Horror • Gothic</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="The Turn of the Screw"
+data-author="Henry James"
+data-genre="Horror Ghost Classic"
+onclick="openBook(
+  'The Turn of the Screw',
+  'https://m.media-amazon.com/images/I/81YD-VWxpCL._AC_UF1000,1000_QL80_.jpg',
+  'Henry James',
+  '4.1 / 5',
+  'A governess believes the children she cares for are being haunted by ghosts.',
+  '128'
+)">
+<img src="https://m.media-amazon.com/images/I/81YD-VWxpCL._AC_UF1000,1000_QL80_.jpg" 
+alt="The Turn of the Screw">
+<div class="book-info">
+<h3>The Turn of the Screw</h3>
+<p>Horror • Ghost</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Pet Sematary"
+data-author="Stephen King"
+data-genre="Horror Supernatural"
+onclick="openBook(
+  'Pet Sematary',
+  'https://m.media-amazon.com/images/I/91ndIrptO4L._AC_UF1000,1000_QL80_.jpg',
+  'Stephen King',
+  '4.4 / 5',
+  'A burial ground with the power to bring the dead back—at a terrible cost.',
+  '395'
+)">
+<img src="https://m.media-amazon.com/images/I/91ndIrptO4L._AC_UF1000,1000_QL80_.jpg" 
+alt="Pet Sematary">
+<div class="book-info">
+<h3>Pet Sematary</h3>
+<p>Horror • Supernatural</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="The Ring"
+data-author="Koji Suzuki"
+data-genre="Horror Supernatural Thriller"
+onclick="openBook(
+  'The Ring',
+  'https://m.media-amazon.com/images/I/81tipkGKL1L._UF1000,1000_QL80_.jpg',
+  'Koji Suzuki',
+  '4.2 / 5',
+  'A cursed videotape causes anyone who watches it to die within seven days.',
+  '262'
+)">
+<img src="https://m.media-amazon.com/images/I/81tipkGKL1L._UF1000,1000_QL80_.jpg" 
+alt="The Ring">
+<div class="book-info">
+<h3>The Ring</h3>
+<p>Horror • Thriller</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="The Girl Next Door"
+data-author="Jack Ketchum"
+data-genre="Horror Psychological Crime"
+onclick="openBook(
+  'The Girl Next Door',
+  'https://upload.wikimedia.org/wikipedia/en/thumb/c/c1/GND_poster_smaller.jpg/250px-GND_poster_smaller.jpg',
+  'Jack Ketchum',
+  '4.0 / 5',
+  'A disturbing true-crime inspired story of cruelty and violence in a suburban home.',
+  '292'
+)">
+<img src="https://upload.wikimedia.org/wikipedia/en/thumb/c/c1/GND_poster_smaller.jpg/250px-GND_poster_smaller.jpg" 
+alt="The Girl Next Door">
+<div class="book-info">
+<h3>The Girl Next Door</h3>
+<p>Horror • Psychological</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="House of Leaves"
+data-author="Mark Z. Danielewski"
+data-genre="Horror Experimental Mystery"
+onclick="openBook(
+  'House of Leaves',
+  'https://m.media-amazon.com/images/I/711hUvzvB7L._AC_UF1000,1000_QL80_.jpg',
+  'Mark Z. Danielewski',
+  '4.3 / 5',
+  'A family discovers their house is bigger on the inside than the outside.',
+  '709'
+)">
+<img src="https://m.media-amazon.com/images/I/711hUvzvB7L._AC_UF1000,1000_QL80_.jpg"
+ alt="House of Leaves">
+<div class="book-info">
+<h3>House of Leaves</h3>
+<p>Horror • Experimental</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="The Silence of the Lambs"
+data-author="Thomas Harris"
+data-genre="Horror Thriller Crime"
+onclick="openBook(
+  'The Silence of the Lambs',
+  'https://m.media-amazon.com/images/I/81s1Ek1deWL._AC_UF1000,1000_QL80_.jpg',
+  'Thomas Harris',
+  '4.6 / 5',
+  'A young FBI trainee consults a dangerous cannibalistic killer to catch another murderer.',
+  '338'
+)">
+<img src="https://m.media-amazon.com/images/I/81s1Ek1deWL._AC_UF1000,1000_QL80_.jpg" 
+alt="The Silence of the Lambs">
+<div class="book-info">
+<h3>The Silence of the Lambs</h3>
+<p>Horror • Thriller</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Coraline"
+data-author="Neil Gaiman"
+data-genre="Horror Fantasy Dark"
+onclick="openBook(
+  'Coraline',
+  'https://m.media-amazon.com/images/I/81j25nie1TL._AC_UF1000,1000_QL80_.jpg',
+  'Neil Gaiman',
+  '4.4 / 5',
+  'A girl discovers a parallel world that hides a terrifying secret behind perfect parents.',
+  '162'
+)">
+<img src="https://m.media-amazon.com/images/I/81j25nie1TL._AC_UF1000,1000_QL80_.jpg" 
+alt="Coraline">
+<div class="book-info">
+<h3>Coraline</h3>
+<p>Horror • Fantasy</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Misery"
+data-author="Stephen King"
+data-genre="Horror Psychological Thriller"
+onclick="openBook(
+  'Misery',
+  'https://m.media-amazon.com/images/I/81DLzi1g+yL._AC_UF1000,1000_QL80_.jpg',
+  'Stephen King',
+  '4.5 / 5',
+  'A writer is held captive by his “number one fan” after a car accident.',
+  '310'
+)">
+<img src="https://m.media-amazon.com/images/I/81DLzi1g+yL._AC_UF1000,1000_QL80_.jpg" 
+alt="Misery">
+<div class="book-info">
+<h3>Misery</h3>
+<p>Horror • Psychological</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="The Ruins"
+data-author="Scott Smith"
+data-genre="Horror Survival Thriller"
+onclick="openBook(
+  'The Ruins',
+  'https://m.media-amazon.com/images/I/81oNmUkGJuL._AC_UF1000,1000_QL80_.jpg',
+  'Scott Smith',
+  '4.1 / 5',
+  'Tourists trapped in ancient ruins face a deadly plant-like entity.',
+  '319'
+)">
+<img src="https://m.media-amazon.com/images/I/81oNmUkGJuL._AC_UF1000,1000_QL80_.jpg" 
+alt="The Ruins">
+<div class="book-info">
+<h3>The Ruins</h3>
+<p>Horror • Survival</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Final Girl Support Group"
+data-author="Grady Hendrix"
+data-genre="Horror Slasher Thriller"
+onclick="openBook(
+  'Final Girl Support Group',
+  'https://m.media-amazon.com/images/I/71-z+-TmvnL.jpg',
+  'Grady Hendrix',
+  '4.0 / 5',
+  'Survivors of serial killers attend therapy groups—but someone is hunting them again.',
+  '352'
+)">
+<img src="https://m.media-amazon.com/images/I/71-z+-TmvnL.jpg" 
+alt="Final Girl Support Group">
+<div class="book-info">
+<h3>Final Girl Support Group</h3>
+<p>Horror • Slasher</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="The Babadook"
+data-author="JD Arden"
+data-genre="Horror Psychological Supernatural"
+onclick="openBook(
+  'The Babadook',
+  'https://m.media-amazon.com/images/I/61S7oRkBgJL._AC_UF350,350_QL50_.jpg',
+  'JD Arden',
+  '4.1 / 5',
+  'A mother and son are haunted by a mysterious creature from a children’s book.',
+  '240'
+)">
+<img src="https://m.media-amazon.com/images/I/61S7oRkBgJL._AC_UF350,350_QL50_.jpg" 
+alt="The Babadook">
+<div class="book-info">
+<h3>The Babadook</h3>
+<p>Horror • Psychological</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="The Troop"
+data-author="Nick Cutter"
+data-genre="Horror Survival Body Horror"
+onclick="openBook(
+  'The Troop',
+  'https://m.media-amazon.com/images/I/719F2vcWZnL._AC_UF1000,1000_QL80_.jpg',
+  'Nick Cutter',
+  '4.2 / 5',
+  'Boy Scouts on an island encounter a terrifying biological infection.',
+  '407'
+)">
+<img src="https://m.media-amazon.com/images/I/719F2vcWZnL._AC_UF1000,1000_QL80_.jpg" 
+alt="The Troop">
+<div class="book-info">
+<h3>The Troop</h3>
+<p>Horror • Survival</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="World War Z"
+data-author="Max Brooks"
+data-genre="Horror Zombie Apocalypse"
+onclick="openBook(
+  'World War Z',
+  'https://m.media-amazon.com/images/I/71f32nD8PCL.jpg',
+  'Max Brooks',
+  '4.4 / 5',
+  'Survivors recount the global zombie war that nearly destroyed humanity.',
+  '342'
+)">
+<img src="https://m.media-amazon.com/images/I/71f32nD8PCL.jpg" 
+alt="World War Z">
+<div class="book-info">
+<h3>World War Z</h3>
+<p>Horror • Zombies</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="The Descent"
+data-author="Jeff Long"
+data-genre="Horror Adventure Thriller"
+onclick="openBook(
+  'The Descent',
+  'https://m.media-amazon.com/images/I/61OjmAtg85L._AC_UF1000,1000_QL80_.jpg',
+  'Jeff Long',
+  '4.1 / 5',
+  'Explorers discover a hidden underground world inhabited by terrifying beings.',
+  '528'
+)">
+<img src="https://m.media-amazon.com/images/I/61OjmAtg85L._AC_UF1000,1000_QL80_.jpg" 
+alt="The Descent">
+<div class="book-info">
+<h3>The Descent</h3>
+<p>Horror • Adventure</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Annihilation"
+data-author="Jeff VanderMeer"
+data-genre="Horror Sci-Fi Mystery"
+onclick="openBook(
+  'Annihilation',
+  'https://upload.wikimedia.org/wikipedia/en/f/f6/Annihilation_%28film%29.png',
+  'Jeff VanderMeer',
+  '4.2 / 5',
+  'A team explores a mysterious zone where nature behaves unnaturally.',
+  '195'
+)">
+<img src="https://upload.wikimedia.org/wikipedia/en/f/f6/Annihilation_%28film%29.png" 
+alt="Annihilation">
+<div class="book-info">
+<h3>Annihilation</h3>
+<p>Horror • Sci-Fi</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="The Only Good Indians"
+data-author="Stephen Graham Jones"
+data-genre="Horror Revenge Supernatural"
+onclick="openBook(
+  'The Only Good Indians',
+  'https://m.media-amazon.com/images/I/710FffsUloL._AC_UF1000,1000_QL80_.jpg',
+  'Stephen Graham Jones',
+  '4.2 / 5',
+  'Four friends are haunted by a supernatural force tied to a past hunting trip.',
+  '305'
+)">
+<img src="https://m.media-amazon.com/images/I/710FffsUloL._AC_UF1000,1000_QL80_.jpg" 
+alt="The Only Good Indians">
+<div class="book-info">
+<h3>The Only Good Indians</h3>
+<p>Horror • Supernatural</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="My Best Friend’s Exorcism"
+data-author="Grady Hendrix"
+data-genre="Horror Comedy Supernatural"
+onclick="openBook(
+  'My Best Friend’s Exorcism',
+  'https://m.media-amazon.com/images/I/81mxXvt3TSL.jpg',
+  'Grady Hendrix',
+  '4.1 / 5',
+  'A teenager tries to save her possessed best friend in the 80s.',
+  '336'
+)">
+<img src="https://m.media-amazon.com/images/I/81mxXvt3TSL.jpg" 
+alt="My Best Friend’s Exorcism">
+<div class="book-info">
+<h3>My Best Friend’s Exorcism</h3>
+<p>Horror • Comedy</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Penpal"
+data-author="Dathan Auerbach"
+data-genre="Horror Psychological Mystery"
+onclick="openBook(
+  'Penpal',
+  'https://m.media-amazon.com/images/I/81scYFhI7AL.jpg',
+  'Dathan Auerbach',
+  '4.0 / 5',
+  'A man uncovers disturbing memories from his childhood involving a mysterious stalker.',
+  '300'
+)">
+<img src="https://m.media-amazon.com/images/I/81scYFhI7AL.jpg" 
+alt="Penpal">
+<div class="book-info">
+<h3>Penpal</h3>
+<p>Horror • Psychological</p>
+</div>
+</div>
+
+    </div>
+  <button class="scroll-btn right">❯</button>
+</div>
+
+    <!-- MANGA -->
+<h2>Manga</h2>
+
+<div class="row-wrapper">
+    <button class="arrow left">❮</button>
+    <div class="row" id="bookRow">
+
+    <div class="book-box"
+data-title="One Piece"
+data-author="Eiichiro Oda"
+data-genre="Adventure Fantasy"
+onclick="openBook(
+  'One Piece',
+  'https://m.media-amazon.com/images/M/MV5BMTNjNGU4NTUtYmVjMy00YjRiLTkxMWUtNzZkMDNiYjZhNmViXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg',
+  'Eiichiro Oda',
+  '4.9 / 5',
+  'Monkey D. Luffy sets sail in search of the legendary One Piece treasure to become King of the Pirates.',
+  '259'
+)">
+<img src="https://m.media-amazon.com/images/M/MV5BMTNjNGU4NTUtYmVjMy00YjRiLTkxMWUtNzZkMDNiYjZhNmViXkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" 
+alt="One Piece">
+<div class="book-info">
+<h3>One Piece</h3>
+<p>Adventure • Fantasy</p>
+</div>
+</div>
+
+ <div class="book-box"
+data-title="Naruto"
+data-author="Masashi Kishimoto"
+data-genre="Action Adventure"
+onclick="openBook(
+  'Naruto',
+  'https://m.media-amazon.com/images/M/MV5BZTNjOWI0ZTAtOGY1OS00ZGU0LWEyOWYtMjhkYjdlYmVjMDk2XkEyXkFqcGc@._V1_QL75_UY281_CR1,0,190,281_.jpg',
+  'Masashi Kishimoto',
+  '4.8 / 5',
+  'Naruto Uzumaki dreams of becoming Hokage and earning the respect of his village.',
+  '572')">
+<img src="https://m.media-amazon.com/images/M/MV5BZTNjOWI0ZTAtOGY1OS00ZGU0LWEyOWYtMjhkYjdlYmVjMDk2XkEyXkFqcGc@._V1_QL75_UY281_CR1,0,190,281_.jpg" 
+alt="Naruto">
+<div class="book-info">
+<h3>Naruto</h3>
+<p>Action • Adventure</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Bleach"
+data-author="Tite Kubo"
+data-genre="Action Supernatural"
+onclick="openBook(
+  'Bleach',
+  'https://m.media-amazon.com/images/M/MV5BMjgyM2QzMjAtOGZjOS00OGFkLTkxZGYtMDJjZGM5MzIzYmM3XkEyXkFqcGc@._V1_.jpg',
+  'Tite Kubo',
+  '4.7 / 5',
+  'Ichigo Kurosaki gains Soul Reaper powers and battles evil spirits.',
+  '754')">
+<img src="https://m.media-amazon.com/images/M/MV5BMjgyM2QzMjAtOGZjOS00OGFkLTkxZGYtMDJjZGM5MzIzYmM3XkEyXkFqcGc@._V1_.jpg" 
+alt="Bleach">
+<div class="book-info">
+<h3>Bleach</h3>
+<p>Action • Supernatural</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Attack on Titan"
+data-author="Hajime Isayama"
+data-genre="Dark Fantasy Action"
+onclick="openBook(
+  'Attack on Titan',
+  'https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p10701949_b_v8_ah.jpg',
+  'Hajime Isayama',
+  '4.9 / 5',
+  'Humanity fights for survival against gigantic Titans behind massive walls.',
+  '34'
+)">
+<img src="https://resizing.flixster.com/-XZAfHZM39UwaGJIFWKAE8fS0ak=/v3/t/assets/p10701949_b_v8_ah.jpg" 
+alt="Attack on Titan">
+<div class="book-info">
+<h3>Attack on Titan</h3>
+<p>Dark Fantasy • Action</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Death Note"
+data-author="Tsugumi Ohba"
+data-genre="Psychological Thriller"
+onclick="openBook(
+  'Death Note',
+  'https://m.media-amazon.com/images/M/MV5BYTgyZDhmMTEtZDFhNi00MTc4LTg3NjUtYWJlNGE5Mzk2NzMxXkEyXkFqcGc@._V1_QL75_UX190_CR0,2,190,281_.jpg',
+  'Tsugumi Ohba',
+  '4.9 / 5',
+  'A student discovers a notebook that can kill anyone whose name is written in it.',
+  '582'
+)">
+<img src="https://m.media-amazon.com/images/M/MV5BYTgyZDhmMTEtZDFhNi00MTc4LTg3NjUtYWJlNGE5Mzk2NzMxXkEyXkFqcGc@._V1_QL75_UX190_CR0,2,190,281_.jpg" 
+alt="Death Note">
+<div class="book-info">
+<h3>Death Note</h3>
+<p>Psychological • Thriller</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Demon Slayer"
+data-author="Koyoharu Gotouge"
+data-genre="Action Fantasy"
+onclick="openBook(
+  'Demon Slayer',
+  'https://www.crossword.in/cdn/shop/files/81ZNkhqRvVL._SL1500.jpg?v=1761907985',
+  'Koyoharu Gotouge',
+  '4.8 / 5',
+  'Tanjiro Kamado becomes a demon slayer after his family is attacked by demons.',
+  '893')">
+<img src="https://www.crossword.in/cdn/shop/files/81ZNkhqRvVL._SL1500.jpg?v=1761907985" 
+alt="Demon Slayer">
+<div class="book-info">
+<h3>Demon Slayer</h3>
+<p>Action • Fantasy</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Jujutsu Kaisen"
+data-author="Gege Akutami"
+data-genre="Action Supernatural"
+onclick="openBook(
+  'Jujutsu Kaisen',
+  'https://upload.wikimedia.org/wikipedia/en/thumb/4/46/Jujutsu_kaisen.jpg/250px-Jujutsu_kaisen.jpg',
+  'Gege Akutami',
+  '4.8 / 5',
+  'Yuji Itadori joins sorcerers to battle deadly curses threatening humanity.',
+  '30'
+)">
+<img src="https://upload.wikimedia.org/wikipedia/en/thumb/4/46/Jujutsu_kaisen.jpg/250px-Jujutsu_kaisen.jpg" 
+alt="Jujutsu Kaisen">
+<div class="book-info">
+<h3>Jujutsu Kaisen</h3>
+<p>Action • Supernatural</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Chainsaw Man"
+data-author="Tatsuki Fujimoto"
+data-genre="Dark Fantasy Action"
+onclick="openBook(
+  'Chainsaw Man',
+  'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgOTJqvkcWj-TqAa-YOLZzvt1EneVb0LCuvfO_-TX0hsBEX36kzw7lhw2A&s=10',
+  'Tatsuki Fujimoto',
+  '4.8 / 5',
+  'Denji merges with a devil and becomes the powerful Chainsaw Man.',
+  '280')">
+<img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTgOTJqvkcWj-TqAa-YOLZzvt1EneVb0LCuvfO_-TX0hsBEX36kzw7lhw2A&s=10" 
+alt="Chainsaw Man">
+<div class="book-info">
+<h3>Chainsaw Man</h3>
+<p>Dark Fantasy • Action</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Tokyo Ghoul"
+data-author="Sui Ishida"
+data-genre="Dark Fantasy Horror"
+onclick="openBook(
+  'Tokyo Ghoul',
+  'https://m.media-amazon.com/images/I/81gv-D-LqhL._AC_UF1000,1000_QL80_.jpg',
+  'Sui Ishida',
+  '4.7 / 5',
+  'Ken Kaneki becomes half-ghoul after a tragic encounter and struggles with his new identity.',
+  '154')">
+<img src="https://m.media-amazon.com/images/I/81gv-D-LqhL._AC_UF1000,1000_QL80_.jpg" 
+alt="Tokyo Ghoul">
+<div class="book-info">
+<h3>Tokyo Ghoul</h3>
+<p>Dark Fantasy • Horror</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="My Hero Academia"
+data-author="Kohei Horikoshi"
+data-genre="Superhero Action"
+onclick="openBook(
+  'My Hero Academia',
+  'https://m.media-amazon.com/images/M/MV5BY2QzODA5OTQtYWJlNi00ZjIzLThhNTItMDMwODhlYzYzMjA2XkEyXkFqcGc@._V1_.jpg',
+  'Kohei Horikoshi',
+  '4.7 / 5',
+  'Izuku Midoriya trains to become a hero in a world where superpowers are common.',
+  '482'
+)">
+<img src="https://m.media-amazon.com/images/M/MV5BY2QzODA5OTQtYWJlNi00ZjIzLThhNTItMDMwODhlYzYzMjA2XkEyXkFqcGc@._V1_.jpg" 
+alt="My Hero Academia">
+<div class="book-info">
+<h3>My Hero Academia</h3>
+<p>Superhero • Action</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Hunter × Hunter"
+data-author="Yoshihiro Togashi"
+data-genre="Adventure Fantasy"
+onclick="openBook(
+  'Hunter × Hunter',
+  'https://upload.wikimedia.org/wikipedia/en/8/82/Hunter_%C3%97_Hunter_%282011%29.png',
+  'Yoshihiro Togashi',
+  '4.9 / 5',
+  'Gon Freecss embarks on a journey to become a Hunter and find his father.',
+  '378'
+)">
+<img src="https://upload.wikimedia.org/wikipedia/en/8/82/Hunter_%C3%97_Hunter_%282011%29.png" 
+alt="Hunter × Hunter">
+<div class="book-info">
+<h3>Hunter × Hunter</h3>
+<p>Adventure • Fantasy</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Haikyuu!!"
+data-author="Haruichi Furudate"
+data-genre="Sports Comedy"
+onclick="openBook(
+  'Haikyuu!!',
+  'https://m.media-amazon.com/images/M/MV5BYjYxMWFlYTAtYTk0YS00NTMxLWJjNTQtM2E0NjdhYTRhNzE4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg',
+  'Haruichi Furudate',
+  '4.9 / 5',
+  'A determined volleyball player strives to reach the top with his team.',
+  '458')">
+<img src="https://m.media-amazon.com/images/M/MV5BYjYxMWFlYTAtYTk0YS00NTMxLWJjNTQtM2E0NjdhYTRhNzE4XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" 
+alt="Haikyuu!!">
+<div class="book-info">
+<h3>Haikyuu!!</h3>
+<p>Sports • Comedy</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="One Punch Man"
+data-author="ONE"
+data-genre="Action Comedy"
+onclick="openBook(
+  'One Punch Man',
+  'https://m.media-amazon.com/images/I/81VAgJoB3BL.jpg',
+  'ONE',
+  '4.8 / 5',
+  'Saitama can defeat any enemy with a single punch but seeks a real challenge.',
+  '532')">
+<img src="https://m.media-amazon.com/images/I/81VAgJoB3BL.jpg" 
+alt="One Punch Man">
+<div class="book-info">
+<h3>One Punch Man</h3>
+<p>Action • Comedy</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Berserk"
+data-author="Kentaro Miura"
+data-genre="Dark Fantasy Action"
+onclick="openBook(
+  'Berserk',
+  'https://m.media-amazon.com/images/I/91rdTtLWAHL._AC_UF1000,1000_QL80_.jpg',
+  'Kentaro Miura',
+  '4.9 / 5',
+  'A lone mercenary named Guts battles demons and struggles against fate in a dark medieval world.',
+  '482')">
+<img src="https://m.media-amazon.com/images/I/91rdTtLWAHL._AC_UF1000,1000_QL80_.jpg" 
+alt="Berserk">
+<div class="book-info">
+<h3>Berserk</h3>
+<p>Dark Fantasy • Action</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Vinland Saga"
+data-author="Makoto Yukimura"
+data-genre="Historical Adventure"
+onclick="openBook(
+  'Vinland Saga',
+  'https://m.media-amazon.com/images/I/91+Qs9DaFZL._AC_UF1000,1000_QL80_.jpg',
+  'Makoto Yukimura',
+  '4.9 / 5',
+  'Young Thorfinn seeks revenge and meaning during the Viking era.',
+  '28'
+)">
+<img src="https://m.media-amazon.com/images/I/91+Qs9DaFZL._AC_UF1000,1000_QL80_.jpg" 
+alt="Vinland Saga">
+<div class="book-info">
+<h3>Vinland Saga</h3>
+<p>Historical • Adventure</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Spy x Family"
+data-author="Tatsuya Endo"
+data-genre="Comedy Action"
+onclick="openBook(
+  'Spy x Family',
+  'https://m.media-amazon.com/images/I/81bDd7DcXHL._UF1000,1000_QL80_.jpg',
+  'Tatsuya Endo',
+  '4.8 / 5',
+  'A spy, an assassin, and a telepath form an unusual family while hiding their secrets.',
+  '515')">
+<img src="https://m.media-amazon.com/images/I/81bDd7DcXHL._UF1000,1000_QL80_.jpg" alt="Spy x Family">
+<div class="book-info">
+<h3>Spy x Family</h3>
+<p>Comedy • Action</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Dr. Stone"
+data-author="Riichiro Inagaki"
+data-genre="Science Adventure"
+onclick="openBook(
+  'Dr. Stone',
+  'https://m.media-amazon.com/images/M/MV5BYzZkYjM1MWMtNTY3Mi00MTMzLTlhNmQtN2ExZjFkYzdjZmFjXkEyXkFqcGc@._V1_.jpg',
+  'Riichiro Inagaki',
+  '4.8 / 5',
+  'After humanity is petrified, Senku uses science to rebuild civilization.',
+  '287')">
+<img src="https://m.media-amazon.com/images/M/MV5BYzZkYjM1MWMtNTY3Mi00MTMzLTlhNmQtN2ExZjFkYzdjZmFjXkEyXkFqcGc@._V1_.jpg" 
+alt="Dr. Stone">
+<div class="book-info">
+<h3>Dr. Stone</h3>
+<p>Science • Adventure</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Kaiju No. 8"
+data-author="Naoya Matsumoto"
+data-genre="Action Sci-Fi"
+onclick="openBook(
+  'Kaiju No. 8',
+  'https://m.media-amazon.com/images/M/MV5BM2VmNTc3OWQtOTVmMy00MGZlLTk3N2QtM2YwZDE5MWVjZmM5XkEyXkFqcGc@._V1_QL75_UX190_CR0,2,190,281_.jpg',
+  'Naoya Matsumoto',
+  '4.8 / 5',
+  'Kafka Hibino gains the power to transform into a powerful kaiju while protecting humanity.',
+  '285')">
+<img src="https://m.media-amazon.com/images/M/MV5BM2VmNTc3OWQtOTVmMy00MGZlLTk3N2QtM2YwZDE5MWVjZmM5XkEyXkFqcGc@._V1_QL75_UX190_CR0,2,190,281_.jpg" 
+alt="Kaiju No. 8">
+<div class="book-info">
+<h3>Kaiju No. 8</h3>
+<p>Action • Sci-Fi</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="The Promised Neverland"
+data-author="Kaiu Shirai"
+data-genre="Mystery Thriller"
+onclick="openBook(
+  'The Promised Neverland',
+  'https://m.media-amazon.com/images/M/MV5BMGQ4ZGJhZTUtZDQ5Mi00NTI1LWEyYjItMzIxM2VlNmY4MDEyXkEyXkFqcGc@._V1_.jpg',
+  'Kaiu Shirai',
+  '4.8 / 5',
+  'A group of gifted children uncover the terrifying secret behind their orphanage.',
+  '500'
+)">
+<img src="https://m.media-amazon.com/images/M/MV5BMGQ4ZGJhZTUtZDQ5Mi00NTI1LWEyYjItMzIxM2VlNmY4MDEyXkEyXkFqcGc@._V1_.jpg" 
+alt="The Promised Neverland">
+<div class="book-info">
+<h3>The Promised Neverland</h3>
+<p>Mystery • Thriller</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Fire Force"
+data-author="Atsushi Ohkubo"
+data-genre="Action Supernatural"
+onclick="openBook(
+  'Fire Force',
+  'https://m.media-amazon.com/images/I/81H2azb7aNL.jpg',
+  'Atsushi Ohkubo',
+  '4.7 / 5',
+  'Special firefighters battle mysterious human combustions and uncover hidden conspiracies.',
+  '340')">
+<img src="https://m.media-amazon.com/images/I/81H2azb7aNL.jpg" 
+alt="Fire Force">
+<div class="book-info">
+<h3>Fire Force</h3>
+<p>Action • Supernatural</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Mob Psycho 100"
+data-author="ONE"
+data-genre="Comedy Supernatural"
+onclick="openBook(
+  'Mob Psycho 100',
+  'https://m.media-amazon.com/images/M/MV5BYzU3NDM4ZjgtY2UyMi00YTczLTgyNDEtMjBiMDJlOGUxNjcxXkEyXkFqcGc@._V1_QL75_UX190_CR0,2,190,281_.jpg',
+  'ONE',
+  '4.8 / 5',
+  'A shy psychic teenager tries to live a normal life while controlling immense powers.',
+  '526'
+)">
+<img src="https://m.media-amazon.com/images/M/MV5BYzU3NDM4ZjgtY2UyMi00YTczLTgyNDEtMjBiMDJlOGUxNjcxXkEyXkFqcGc@._V1_QL75_UX190_CR0,2,190,281_.jpg" 
+alt="Mob Psycho 100">
+<div class="book-info">
+<h3>Mob Psycho 100</h3>
+<p>Comedy • Supernatural</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Fullmetal Alchemist"
+data-author="Hiromu Arakawa"
+data-genre="Fantasy Adventure"
+onclick="openBook(
+  'Fullmetal Alchemist',
+  'https://m.media-amazon.com/images/M/MV5BNDczZWMyMjEtZDI0ZS00YThjLWE2MjEtNTIxNmVmZDhkNDg5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg',
+  'Hiromu Arakawa',
+  '4.9 / 5',
+  'Two brothers use alchemy in a quest to restore their bodies after a failed experiment.',
+  '286')">
+<img src="https://m.media-amazon.com/images/M/MV5BNDczZWMyMjEtZDI0ZS00YThjLWE2MjEtNTIxNmVmZDhkNDg5XkEyXkFqcGc@._V1_FMjpg_UX1000_.jpg" 
+alt="Fullmetal Alchemist">
+<div class="book-info">
+<h3>Fullmetal Alchemist</h3>
+<p>Fantasy • Adventure</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Solo Leveling"
+data-author="Chugong"
+data-genre="Action Fantasy"
+onclick="openBook(
+  'Solo Leveling',
+  'https://cdn.kobo.com/book-images/13b9c607-87d8-45df-90dc-841025f8999e/353/569/90/False/solo-leveling-vol-1-comic.jpg',
+  'Chugong',
+  '4.9 / 5',
+  'The weakest hunter gains a mysterious system that allows him to level up endlessly.',
+  '584')">
+<img src="https://cdn.kobo.com/book-images/13b9c607-87d8-45df-90dc-841025f8999e/353/569/90/False/solo-leveling-vol-1-comic.jpg" 
+alt="Solo Leveling">
+<div class="book-info">
+<h3>Solo Leveling</h3>
+<p>Action • Fantasy</p>
+</div>
+</div>
+</div>
+<button class="scroll-btn right">❯</button>
+</div>
+
+<h2>Novels</h2>
+<div class="row-wrapper">
+    <button class="scroll-btn left">❮</button>
+    <div class="row">
+        <div class="book-box"
+data-title="To Kill a Mockingbird"
+data-author="Harper Lee"
+data-genre="Classic Novel Drama"
+onclick="openBook(
+  'To Kill a Mockingbird',
+  'https://m.media-amazon.com/images/I/81gkyAx5-RL._AC_UF1000,1000_QL80_.jpg',
+  'Harper Lee',
+  '4.7 / 5',
+  'A young girl grows up in the racially divided American South while her father defends an innocent man in court.',
+  '376')">
+<img src="https://m.media-amazon.com/images/I/81gkyAx5-RL._AC_UF1000,1000_QL80_.jpg" 
+alt="To Kill a Mockingbird">
+<div class="book-info">
+<h3>To Kill a Mockingbird</h3>
+<p>Classic • Drama</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="1984"
+data-author="George Orwell"
+data-genre="Dystopian Novel Classic"
+onclick="openBook(
+  '1984',
+  'https://m.media-amazon.com/images/I/71wANojhEKL._AC_UF1000,1000_QL80_.jpg',
+  'George Orwell',
+  '4.6 / 5',
+  'A man lives under a totalitarian regime where surveillance and control dominate every aspect of life.',
+  '328')">
+<img src="https://m.media-amazon.com/images/I/71wANojhEKL._AC_UF1000,1000_QL80_.jpg" 
+alt="1984">
+<div class="book-info">
+<h3>1984</h3>
+<p>Dystopian • Classic</p>
+</div>
+</div>
+<div class="book-box"
+data-title="Pride and Prejudice"
+data-author="Jane Austen"
+data-genre="Romance Classic Novel"
+onclick="openBook(
+  'Pride and Prejudice',
+  'https://m.media-amazon.com/images/I/71QlyxnQrDL._AC_UF1000,1000_QL80_.jpg',
+  'Jane Austen',
+  '4.6 / 5',
+  'A witty romance between Elizabeth Bennet and Mr. Darcy filled with pride, misunderstanding, and love.',
+  '432')">
+<img src="https://m.media-amazon.com/images/I/71QlyxnQrDL._AC_UF1000,1000_QL80_.jpg" 
+alt="Pride and Prejudice">
+<div class="book-info">
+<h3>Pride and Prejudice</h3>
+<p>Romance • Classic</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="The Great Gatsby"
+data-author="F. Scott Fitzgerald"
+data-genre="Classic Novel Drama"
+onclick="openBook(
+  'The Great Gatsby',
+  'https://m.media-amazon.com/images/I/71ptoyWH8dL._UF1000,1000_QL80_.jpg',
+  'F. Scott Fitzgerald',
+  '4.4 / 5',
+  'A mysterious millionaire chases an impossible dream of love and status in 1920s America.',
+  '180'
+)">
+<img src="https://m.media-amazon.com/images/I/71ptoyWH8dL._UF1000,1000_QL80_.jpg" 
+alt="The Great Gatsby">
+<div class="book-info">
+<h3>The Great Gatsby</h3>
+<p>Classic • Drama</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Moby Dick"
+data-author="Herman Melville"
+data-genre="Classic Adventure Novel"
+onclick="openBook(
+  'Moby Dick',
+  'https://m.media-amazon.com/images/I/712mdW4zCcL._AC_UF1000,1000_QL80_.jpg',
+  'Herman Melville',
+  '4.1 / 5',
+  'A captain becomes obsessed with hunting a giant white whale across the seas.',
+  '635'
+)">
+<img src="https://m.media-amazon.com/images/I/712mdW4zCcL._AC_UF1000,1000_QL80_.jpg" 
+alt="Moby Dick">
+<div class="book-info">
+<h3>Moby Dick</h3>
+<p>Classic • Adventure</p>
+</div>
+</div>
+<div class="book-box"
+data-title="The Catcher in the Rye"
+data-author="J.D. Salinger"
+data-genre="Classic Coming-of-Age Novel"
+onclick="openBook(
+  'The Catcher in the Rye',
+  'https://m.media-amazon.com/images/I/81gqsCyhZ4L._AC_UF1000,1000_QL80_.jpg',
+  'J.D. Salinger',
+  '4.2 / 5',
+  'A teenager narrates his experiences of alienation and rebellion in New York City.',
+  '277'
+)">
+<img src="https://m.media-amazon.com/images/I/81gqsCyhZ4L._AC_UF1000,1000_QL80_.jpg" 
+alt="The Catcher in the Rye">
+<div class="book-info">
+<h3>The Catcher in the Rye</h3>
+<p>Classic • Coming-of-Age</p>
+</div>
+</div>
+<div class="book-box"
+data-title="Little Women"
+data-author="Louisa May Alcott"
+data-genre="Classic Family Novel"
+onclick="openBook(
+  'Little Women',
+  'https://m.media-amazon.com/images/I/81NgWvWNtHL.jpg',
+  'Louisa May Alcott',
+  '4.5 / 5',
+  'The lives, struggles, and growth of four sisters growing up in 19th-century America.',
+  '449'
+)">
+<img src="https://m.media-amazon.com/images/I/81NgWvWNtHL.jpg" 
+alt="Little Women">
+<div class="book-info">
+<h3>Little Women</h3>
+<p>Classic • Family</p>
+</div>
+</div>
+<div class="book-box"
+data-title="The Alchemist"
+data-author="Paulo Coelho"
+data-genre="Philosophical Novel Fiction"
+onclick="openBook(
+  'The Alchemist',
+  'https://m.media-amazon.com/images/I/81ZtAPCqyGL._AC_UF1000,1000_QL80_.jpg',
+  'Paulo Coelho',
+  '4.5 / 5',
+  'A shepherd boy travels in search of treasure and learns about destiny and purpose.',
+  '208'
+)">
+<img src="https://m.media-amazon.com/images/I/81ZtAPCqyGL._AC_UF1000,1000_QL80_.jpg" 
+alt="The Alchemist">
+<div class="book-info">
+<h3>The Alchemist</h3>
+<p>Philosophical • Fiction</p>
+</div>
+</div>
+<div class="book-box"
+data-title="The Book Thief"
+data-author="Markus Zusak"
+data-genre="Historical Novel Drama"
+onclick="openBook(
+  'The Book Thief',
+  'https://m.media-amazon.com/images/I/71Ge374aXuL._UF1000,1000_QL80_.jpg',
+  'Markus Zusak',
+  '4.6 / 5',
+  'A young girl steals books during Nazi Germany while Death narrates her story.',
+  '552'
+)">
+<img src="https://m.media-amazon.com/images/I/71Ge374aXuL._UF1000,1000_QL80_.jpg" 
+alt="The Book Thief">
+<div class="book-info">
+<h3>The Book Thief</h3>
+<p>Historical • Drama</p>
+</div>
+</div>
+<div class="book-box"
+data-title="Jane Eyre"
+data-author="Charlotte Brontë"
+data-genre="Classic Romance Novel"
+onclick="openBook(
+  'Jane Eyre',
+  'https://m.media-amazon.com/images/I/91zU70Aw9IS._AC_UF1000,1000_QL80_.jpg',
+  'Charlotte Brontë',
+  '4.5 / 5',
+  'An orphaned girl grows into a strong woman and finds love with a mysterious employer.',
+  '500'
+)">
+<img src="https://m.media-amazon.com/images/I/91zU70Aw9IS._AC_UF1000,1000_QL80_.jpg" 
+alt="Jane Eyre">
+<div class="book-info">
+<h3>Jane Eyre</h3>
+<p>Classic • Romance</p>
+</div>
+</div>
+<div class="book-box"
+data-title="Wuthering Heights"
+data-author="Emily Brontë"
+data-genre="Classic Romance Drama"
+onclick="openBook(
+  'Wuthering Heights',
+  'https://m.media-amazon.com/images/I/91+S0B+HWSL._AC_UF1000,1000_QL80_.jpg',
+  'Emily Brontë',
+  '4.3 / 5',
+  'A passionate and destructive love story set on the Yorkshire moors.',
+  '416'
+)">
+<img src="https://m.media-amazon.com/images/I/91+S0B+HWSL._AC_UF1000,1000_QL80_.jpg" 
+alt="Wuthering Heights">
+<div class="book-info">
+<h3>Wuthering Heights</h3>
+<p>Classic • Romance</p>
+</div>
+</div>
+<div class="book-box"
+data-title="Crime and Punishment"
+data-author="Fyodor Dostoevsky"
+data-genre="Classic Psychological Novel"
+onclick="openBook(
+  'Crime and Punishment',
+  'https://upload.wikimedia.org/wikipedia/en/4/4b/Crimeandpunishmentcover.png',
+  'Fyodor Dostoevsky',
+  '4.6 / 5',
+  'A man commits a crime and struggles with guilt, morality, and redemption.',
+  '671'
+)">
+<img src="https://upload.wikimedia.org/wikipedia/en/4/4b/Crimeandpunishmentcover.png" 
+alt="Crime and Punishment">
+<div class="book-info">
+<h3>Crime and Punishment</h3>
+<p>Classic • Psychological</p>
+</div>
+</div>
+<div class="book-box"
+data-title="Anna Karenina"
+data-author="Leo Tolstoy"
+data-genre="Classic Romance Drama"
+onclick="openBook(
+  'Anna Karenina',
+  'https://m.media-amazon.com/images/I/61uTFEcqj6L._AC_UF1000,1000_QL80_.jpg',
+  'Leo Tolstoy',
+  '4.4 / 5',
+  'A married woman enters a tragic love affair that changes her life forever.',
+  '864'
+)">
+<img src="https://m.media-amazon.com/images/I/61uTFEcqj6L._AC_UF1000,1000_QL80_.jpg" 
+alt="Anna Karenina">
+<div class="book-info">
+<h3>Anna Karenina</h3>
+<p>Classic • Drama</p>
+</div>
+</div>
+<div class="book-box"
+data-title="The Odyssey"
+data-author="Homer"
+data-genre="Epic Classic Adventure"
+onclick="openBook(
+  'The Odyssey',
+  'https://m.media-amazon.com/images/I/81kLSHHjn-L._AC_UF1000,1000_QL80_.jpg',
+  'Homer',
+  '4.3 / 5',
+  'A hero struggles for years to return home after the Trojan War.',
+  '541'
+)">
+<img src="https://m.media-amazon.com/images/I/81kLSHHjn-L._AC_UF1000,1000_QL80_.jpg" 
+alt="The Odyssey">
+<div class="book-info">
+<h3>The Odyssey</h3>
+<p>Epic • Adventure</p>
+</div>
+</div>
+<div class="book-box"
+data-title="Frankenstein"
+data-author="Mary Shelley"
+data-genre="Classic Horror Fiction"
+onclick="openBook(
+  'Frankenstein',
+  'https://mpd-biblio-covers.imgix.net/9781466804807.jpg',
+  'Mary Shelley',
+  '4.4 / 5',
+  'A scientist creates life, but his experiment leads to tragedy and horror.',
+  '280'
+)">
+<img src="https://mpd-biblio-covers.imgix.net/9781466804807.jpg" 
+alt="Frankenstein">
+<div class="book-info">
+<h3>Frankenstein</h3>
+<p>Classic • Horror</p>
+</div>
+</div>
+<div class="book-box"
+data-title="Don Quixote"
+data-author="Miguel de Cervantes"
+data-genre="Classic Adventure Novel"
+onclick="openBook(
+  'Don Quixote',
+  'https://m.media-amazon.com/images/I/813JpsGOpiL._UF1000,1000_QL80_.jpg',
+  'Miguel de Cervantes',
+  '4.2 / 5',
+  'A man becomes obsessed with knightly tales and sets off on imagined adventures.',
+  '863'
+)">
+<img src="https://m.media-amazon.com/images/I/813JpsGOpiL._UF1000,1000_QL80_.jpg" 
+alt="Don Quixote">
+<div class="book-info">
+<h3>Don Quixote</h3>
+<p>Classic • Adventure</p>
+</div>
+</div>
+<div class="book-box"
+data-title="The Picture of Dorian Gray"
+data-author="Oscar Wilde"
+data-genre="Classic Gothic Novel"
+onclick="openBook(
+  'The Picture of Dorian Gray',
+  'https://m.media-amazon.com/images/I/61r4ySDs-RL._AC_UF1000,1000_QL80_.jpg',
+  'Oscar Wilde',
+  '4.4 / 5',
+  'A man stays young while his portrait ages, reflecting his corrupted soul.',
+  '254'
+)">
+<img src="https://m.media-amazon.com/images/I/61r4ySDs-RL._AC_UF1000,1000_QL80_.jpg" 
+alt="The Picture of Dorian Gray">
+<div class="book-info">
+<h3>The Picture of Dorian Gray</h3>
+<p>Classic • Gothic</p>
+</div>
+</div>
+<div class="book-box"
+data-title="Great Expectations"
+data-author="Charles Dickens"
+data-genre="Classic Novel Drama"
+onclick="openBook(
+  'Great Expectations',
+  'https://m.media-amazon.com/images/I/61Jfv98FuAL._AC_UF1000,1000_QL80_.jpg',
+  'Charles Dickens',
+  '4.5 / 5',
+  'A boy rises from poverty while learning harsh truths about life and society.',
+  '505'
+)">
+<img src="https://m.media-amazon.com/images/I/61Jfv98FuAL._AC_UF1000,1000_QL80_.jpg"
+ alt="Great Expectations">
+<div class="book-info">
+<h3>Great Expectations</h3>
+<p>Classic • Drama</p>
+</div>
+</div>
+<div class="book-box"
+data-title="Les Misérables"
+data-author="Victor Hugo"
+data-genre="Classic Historical Drama"
+onclick="openBook(
+  'Les Misérables',
+  'https://cdn.kobo.com/book-images/a6bdd3f5-ba60-4ad3-8f6b-5f1427021961/353/569/90/False/les-miserables-305.jpg',
+  'Victor Hugo',
+  '4.6 / 5',
+  'A man seeks redemption while escaping his troubled past in revolutionary France.',
+  '1463'
+)">
+<img src="https://cdn.kobo.com/book-images/a6bdd3f5-ba60-4ad3-8f6b-5f1427021961/353/569/90/False/les-miserables-305.jpg" 
+alt="Les Misérables">
+<div class="book-info">
+<h3>Les Misérables</h3>
+<p>Classic • Historical</p>
+</div>
+</div>
+
+<div class="book-box"
+data-title="Dracula"
+data-author="Bram Stoker"
+data-genre="Classic Horror Novel"
+onclick="openBook(
+  'Dracula',
+  'https://mpd-biblio-covers.imgix.net/9781035034833.jpg',
+  'Bram Stoker',
+  '4.4 / 5',
+  'A vampire travels to England spreading fear and darkness.',
+  '418'
+)">
+<img src="https://mpd-biblio-covers.imgix.net/9781035034833.jpg" 
+alt="Dracula">
+<div class="book-info">
+<h3>Dracula</h3>
+<p>Classic • Horror</p>
+</div>
+</div>
+<div class="book-box"
+data-title="The Old Man and the Sea"
+data-author="Ernest Hemingway"
+data-genre="Classic Fiction Novel"
+onclick="openBook(
+  'The Old Man and the Sea',
+  'https://m.media-amazon.com/images/I/71RXc0OoEwL._AC_UF1000,1000_QL80_.jpg',
+  'Ernest Hemingway',
+  '4.3 / 5',
+  'An old fisherman struggles against a giant marlin in the sea.',
+  '127'
+)">
+<img src="https://m.media-amazon.com/images/I/71RXc0OoEwL._AC_UF1000,1000_QL80_.jpg" 
+alt="The Old Man and the Sea">
+<div class="book-info">
+<h3>The Old Man and the Sea</h3>
+<p>Classic • Fiction</p>
+</div>
+</div>
+<div class="book-box"
+data-title="Of Mice and Men"
+data-author="John Steinbeck"
+data-genre="Classic Drama Novel"
+onclick="openBook(
+  'Of Mice and Men',
+  'https://upload.wikimedia.org/wikipedia/commons/a/a8/Of_Mice_and_Men_%281937_1st_ed_dust_jacket%29.jpg',
+  'John Steinbeck',
+  '4.4 / 5',
+  'Two migrant workers dream of owning land during the Great Depression.',
+  '187'
+)">
+<img src="https://upload.wikimedia.org/wikipedia/commons/a/a8/Of_Mice_and_Men_%281937_1st_ed_dust_jacket%29.jpg" 
+alt="Of Mice and Men">
+<div class="book-info">
+<h3>Of Mice and Men</h3>
+<p>Classic • Drama</p>
+</div>
+</div>
+<div class="book-box"
+data-title="The Stranger"
+data-author="Albert Camus"
+data-genre="Philosophical Novel"
+onclick="openBook(
+  'The Stranger',
+  'https://m.media-amazon.com/images/I/81MhZRXpz5L._UF1000,1000_QL80_.jpg',
+  'Albert Camus',
+  '4.2 / 5',
+  'A man becomes emotionally detached from society and faces consequences.',
+  '123'
+)">
+<img src="https://m.media-amazon.com/images/I/81MhZRXpz5L._UF1000,1000_QL80_.jpg" 
+alt="The Stranger">
+<div class="book-info">
+<h3>The Stranger</h3>
+<p>Philosophical • Fiction</p>
+</div>
+</div>
+<div class="book-box"
+data-title="Lolita"
+data-author="Vladimir Nabokov"
+data-genre="Classic Psychological Novel"
+onclick="openBook(
+  'Lolita',
+  'https://m.media-amazon.com/images/I/51ydAmI4sqL._SL500_.jpg',
+  'Vladimir Nabokov',
+  '4.1 / 5',
+  'A disturbing and controversial story of obsession and manipulation.',
+  '336'
+)">
+<img src="https://m.media-amazon.com/images/I/51ydAmI4sqL._SL500_.jpg" 
+alt="Lolita">
+<div class="book-info">
+<h3>Lolita</h3>
+<p>Classic • Psychological</p>
+</div>
+</div>
+<div class="book-box"
+data-title="Brave New World"
+data-author="Aldous Huxley"
+data-genre="Dystopian Classic Novel"
+onclick="openBook(
+  'Brave New World',
+  'https://m.media-amazon.com/images/I/81fiJzvcB2L._UF1000,1000_QL80_.jpg',
+  'Aldous Huxley',
+  '4.4 / 5',
+  'A futuristic society is controlled by technology and artificial happiness.',
+  '311'
+)">
+<img src="https://m.media-amazon.com/images/I/81fiJzvcB2L._UF1000,1000_QL80_.jpg"
+ alt="Brave New World">
+<div class="book-info">
+<h3>Brave New World</h3>
+<p>Dystopian • Classic</p>
+</div>
+</div>
+
+    </div>
+
+    <button class="scroll-btn right">❯</button>
+</div>
+
+
+<script src="home.js"></script>
+
+</body>
+</html>
+

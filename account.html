@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BookVault Account</title>
+    <link rel="stylesheet" href="account.css">
+</head>
+<body>
+<header class="navbar">
+
+    <div class="logo-section">
+        <img src="BV.png" class="logo-img" alt="Book Vault Logo">
+        <div class="logo-text">Book Vault</div>
+    </div>
+
+    <div class="nav-right">
+
+        <button class="back-btn"
+                onclick="window.location.href='home.html'">
+            ← Back
+        </button>
+
+        <span onclick="window.location.href='wishlist.html'">❤️</span>
+
+        <span onclick="window.location.href='cart.html'">🛒</span>
+
+        <div class="profile-wrapper">
+
+            <span class="profile-icon"
+            id="profileIcon"
+                  onclick="toggleProfileMenu()">
+                👤
+            </span>
+
+            <div id="profileMenu" class="profile-menu">
+
+                <p onclick="window.location.href='account.html'">
+                    Your Account
+                </p>
+
+                <p onclick="goOrders()">
+                    Your Orders
+                </p>
+
+                <p onclick="window.location.href='wishlist.html'">
+                    Your Wishlist
+                </p>
+
+                <p onclick="window.location.href='cart.html'">
+                    Your Cart
+                </p>
+
+                <p onclick="logout()">
+                    Logout
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+<div class="account-container">
+
+    <div class="account-card">
+
+       <div class="header-section">
+
+    <div class="logo">
+        <img src="BV.png"
+             alt="BookVault Logo"
+             class="logo-img">
+    </div>
+
+    <div class="welcome-text">
+        <h1></h1>
+        <h2>Let's Get You Into the Book Vault !!</h2>
+    </div>
+
+</div>
+
+        <div class="toggle-box">
+            <button id="indiaBtn" class="active">India</button>
+            <button id="globalBtn">Global</button>
+        </div>
+
+        <!-- INDIA SECTION -->
+        <div id="indiaSection">
+
+    <input type="text" id="indiaName" placeholder="Full Name">
+
+    <input type="email" id="indiaEmail" placeholder="Email">
+<div class="password-box">
+        <input type="password" id="indiaPassword" placeholder="Password">
+    </div>
+    <input type="text" id="mobileNumber" placeholder="Mobile Number">
+
+    <textarea id="indiaAddress" placeholder="Address"></textarea>
+
+
+    <label class="check-box">
+    <input type="checkbox" id="indiaTerms">
+    I agree to Terms & Privacy Policy
+</label>
+
+    <button class="main-btn" onclick="createIndiaAccount()">
+        Create Account
+    </button>
+
+</div>
+
+        <!-- GLOBAL SECTION -->
+        <div id="globalSection" style="display:none;">
+
+            <input type="text"
+                   id="globalName"
+                   placeholder="Full Name">
+
+            <input type="email"
+                   id="globalEmail"
+                   placeholder="Email">
+
+            <div class="password-box">
+
+                <input type="password"
+                       id="globalPassword"
+                       placeholder="Password">
+
+                <span class="eye"
+                      onclick="togglePassword('globalPassword')">
+                    👁
+                </span>
+
+            </div>
+
+            <input type="text"
+                   id="globalLocation"
+                   placeholder="Country / Location">
+
+            <label class="check-box">
+                <input type="checkbox" id="globalTerms">
+                I agree to Terms & Privacy Policy
+            </label>
+
+            <button class="main-btn"
+                    onclick="createGlobalAccount()">
+                Create Account
+            </button>
+
+        </div>
+
+        <div class="girl-image">
+            <img src="https://cdn-icons-png.flaticon.com/512/2436/2436636.png"
+                 alt="Reading Girl"
+                 class="girl-img">
+        </div>
+
+    </div>
+
+</div>
+
+<div id="popup" class="popup">
+
+    <div class="popup-content">
+
+        <h3 id="popupTitle"></h3>
+
+        <p id="popupMessage"></p>
+
+        <button onclick="closePopup()">
+            OK
+        </button>
+
+    </div>
+
+</div>
+
+<script src="account.js"></script>
+
+</body>
+</html>

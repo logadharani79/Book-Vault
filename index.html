@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Book Vault Login</title>
+    <link rel="stylesheet" href="login.css">
+</head>
+
+<body>
+
+<div class="background">
+
+    <div class="login-card">
+          <img src="BV.png" alt="Book Vault Logo" class="login-logo">
+        <h1 class="title">Book Vault</h1>
+
+        <input type="text" id ="username" placeholder="Username">
+        <div class="password-container">
+    <input type="password" id="password" placeholder="Password">
+    <span class="eye-icon" onclick="togglePassword()">👁</span>
+</div>
+
+<button onclick="login()">Enter the Vault</button>
+        <p id="msg"></p>
+
+    </div>
+
+</div>
+<script src="login.js"></script>
+</body>
+</html>

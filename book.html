@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Details</title>
+    <link rel="stylesheet" href="book.css">
+</head>
+<body>
+<!-- NAVBAR -->
+
+<header class="navbar">
+
+    <div class="logo-section">
+
+        <img src="BV.png"
+             class="logo-img"
+             alt="Book Vault Logo">
+
+        <div class="logo-text">
+             Book Vault
+        </div>
+
+    </div>
+
+    <div class="nav-right">
+
+        <button class="back-btn"
+                onclick="window.location.href='home.html'">
+            ← Back
+        </button>
+
+        <span onclick="window.location.href='wishlist.html'">
+            ❤️
+        </span>
+
+        <span onclick="window.location.href='cart.html'">
+            🛒
+        </span>
+
+        <div class="profile-wrapper">
+
+            <span class="profile-icon"
+                  onclick="toggleProfileMenu()">
+                👤
+            </span>
+
+            <div id="profileMenu" class="profile-menu">
+
+                <p onclick="goAccount()">
+                    Your Account
+                </p>
+
+                <p onclick="goOrders()">
+                    Your Orders
+                </p>
+
+                <p onclick="window.location.href='wishlist.html'">
+                    Your Wishlist
+                </p>
+
+                <p onclick="window.location.href='cart.html'">
+                    Your Cart
+                </p>
+
+                <p onclick="logout()">
+                    Logout
+                </p>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</header>
+<div class="book-container">
+
+    <div class="book-card">
+
+        <!-- BOOK IMAGE -->
+        <div class="book-image">
+            <img id="bookImage" alt="Book Cover">
+        </div>
+
+        <!-- BOOK INFO -->
+        <div class="book-info">
+
+            <h1 id="bookTitle"></h1>
+
+            <h3 id="bookAuthor"></h3>
+
+<div class="rating" id="bookRating"></div>
+
+<p class="description" id="bookDescription"></p>
+
+<div class="price" id="bookPrice"></div>
+
+            <div class="button-group">
+
+                <button onclick="addWishlist()">
+                    ❤️ Add to Wishlist
+                </button>
+
+                <button onclick="addCart()">
+                    🛒 Add to Cart
+                </button>
+
+                <button onclick="buyNow()">
+                    ⚡ Buy Now
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<script src="book.js"></script>
+
+</body>
+</html>

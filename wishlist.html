@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Wishlist</title>
+    <link rel="stylesheet" href="wishlist.css">
+</head>
+<body>
+
+<header class="navbar">
+<div class="logo-section">
+    <img src="BV.png" class="logo-img" alt="Book Vault Logo">
+    <div class="logo-text">Book Vault</div>
+  </div>
+
+    <div class="nav-right">
+
+        <button class="back-btn"
+                onclick="window.location.href='home.html'">
+            ← Back
+        </button>
+
+        <span onclick="window.location.href='wishlist.html'">❤️</span>
+
+        <span onclick="window.location.href='cart.html'">🛒</span>
+
+<div class="profile-wrapper">
+
+    <span class="profile-icon"
+          onclick="toggleProfileMenu()">
+        👤
+    </span>
+
+    <div id="profileMenu" class="profile-menu">
+
+        <p onclick="goAccount()">Your Account</p>
+
+        <p onclick="goOrders()">Your Orders</p>
+
+        <p onclick="window.location.href='wishlist.html'">
+            Your Wishlist
+        </p>
+
+        <p onclick="window.location.href='cart.html'">
+            Your Cart
+        </p>
+
+        <p onclick="logout()">
+            Logout
+        </p>
+
+    </div>
+
+</div>
+
+</div>
+
+    </div>
+
+</header>
+
+<h1 class="page-title">
+    ❤️ My Wishlist
+</h1>
+
+<div id="wishlistContainer">
+
+</div>
+
+<script src="wishlist.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,126 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* FULL SCREEN BACKGROUND */
+.background {
+    height: 100vh;
+    width: 100%;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    /* slightly brighter than before */
+    background-image: linear-gradient(
+        rgba(0,0,0,0.55),
+        rgba(0,0,0,0.55)
+    ),
+    url("https://i.pinimg.com/736x/ff/09/fc/ff09fcccfe48d353d57b537392d17e44.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+/* LOGIN BOX */
+.login-card {
+    width: 420px;
+    background: rgba(0, 0, 0, 0.75);
+    padding: 35px;
+    border-radius: 12px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+
+    color: white;
+
+    box-shadow:
+        0 10px 30px rgba(0,0,0,0.6),
+        0 0 20px rgba(255,255,255,0.05);
+}
+.login-logo{
+    width:200px;
+    height:200px;
+    object-fit:contain;
+
+    display:block;
+    margin:0 auto 10px auto;
+}
+
+/* TITLE */
+.title{
+    margin:0;
+    text-align:center;
+    font-size:48px;
+    font-weight:bold;
+    color:white;
+}
+
+/* INPUT */
+input {
+    width: 100%;
+    padding: 12px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    background: #333;
+    color: white;
+}
+
+/* BUTTON */
+button {
+    width: 100%;
+    padding: 12px;
+    background: #e50914;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+button:hover {
+    background: #b00610;
+}
+
+/* MESSAGE */
+#msg {
+    text-align: center;
+    font-size: 13px;
+}
+.password-container {
+    position: relative;
+    width: 100%;
+}
+
+.password-container input {
+    width: 100%;
+    padding: 12px;
+    padding-right: 45px;
+    border-radius: 6px;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.eye-icon {
+    position: absolute;
+    right: 15px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    user-select: none;
+
+    color: black;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.eye-icon:hover {
+    opacity: 0.7;
+}
